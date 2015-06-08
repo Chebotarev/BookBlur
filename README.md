@@ -9,10 +9,10 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 
 - [ ] Create accounts
 - [ ] Create sessions (log in)
-- [ ] View Books from the [Gutenberg project][gutenberg]
+- [ ] View book content
 - [ ] 
 
-* [gutenberg]: https://www.gutenberg.org/
+[gutenberg]: https://www.gutenberg.org/
 
 
 ## Design Docs
