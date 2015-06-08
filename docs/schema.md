@@ -62,3 +62,17 @@ id                | integer   | not null, primary key
 commentable_id    | integer   | not null, foreign key (polymorphic)
 commentable_type  | string    | not null, polymorphic type
 body              | text      |
+
+
+## tags
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+name              | string    | not null
+
+## taggings
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+tag_id            | integer   | not null, foreign key (references tags)
+book_id           | integer   | not null, foreign key (references books)

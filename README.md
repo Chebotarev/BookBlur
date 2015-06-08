@@ -10,9 +10,12 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 - [ ] Create accounts
 - [ ] Create sessions (log in)
 - [ ] View book content
-- [ ] 
-
-[gutenberg]: https://www.gutenberg.org/
+- [ ] Search for books
+- [ ] Create reading lists
+- [ ] Create and view bookmarks
+- [ ] Attach notes to bookmarks
+- [ ] Post comments on books
+- [ ] Tag books with genres
 
 
 ## Design Docs
@@ -45,8 +48,15 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ]
+- [ ] Integrate with the [Gutenberg Project][gutenberg] for content
+- [ ] User avatars and profile settings
+- [ ] Search for other users and friend them
+- [ ] See friend's bookmarks and notes
+- [ ] Live feed of friend comments on displayed book
+- [ ] Random book recommendations
 
+
+[gutenberg]: https://www.gutenberg.org/
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
