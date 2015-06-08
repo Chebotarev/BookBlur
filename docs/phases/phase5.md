@@ -1,10 +1,12 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Comments and Tags on Books
 
 ## Rails
 ### Models
-
+* Comment
+* Tag
 ### Controllers
-
+* CommentsController (create, update, destroy)
+* TagsController (create, update, destroy)
 ### Views
 
 ## Backbone
@@ -13,5 +15,5 @@
 ### Collections
 
 ### Views
-
+* BookInfo (other tab)
 ## Gems/Libraries

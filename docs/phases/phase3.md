@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Book Navigation with an Index
 
 ## Rails
 ### Models
@@ -9,9 +9,12 @@
 
 ## Backbone
 ### Models
-
+* List
+* Book
 ### Collections
-
+* Lists
+* Books
 ### Views
-
+* BookNav
+* BookShow
 ## Gems/Libraries

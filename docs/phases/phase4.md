@@ -1,4 +1,4 @@
-# Phase 4: User Feeds
+# Phase 4: Bookmarks and Notes
 
 ## Rails
 ### Models
@@ -9,9 +9,12 @@
 
 ## Backbone
 ### Models
-
+* Bookmark
+* Note
 ### Collections
-
+* Bookmarks
+* Notes
 ### Views
-
+* BookShow
+* BookInfo
 ## Gems/Libraries

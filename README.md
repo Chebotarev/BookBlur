@@ -33,7 +33,7 @@ I will write my own authentication system for creating users and logging in acco
 [Details][phase-one]
 
 ### Phase 2: Reading Lists and Book Search (~ 1.5 days)
-I will create a form for creating a reading list. Then I will implement a search feature for books by title. Each result should have a button to allow adding the book to a particular list.
+I will implement a search feature for books by title as a jQuery plugin (possibly through a third party gem). Each result should have a button to allow adding the book to a particular list. The first option should be to create a new reading list.
 
 [Details][phase-two]
 
