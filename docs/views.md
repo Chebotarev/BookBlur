@@ -1,26 +1,26 @@
 # View Wireframes
 
 ## User Login
-![user_login]
+![user-login]
 
-## Main Navigation (landing page)
-![book_nav]
+## Book Navigation (landing page)
+![book-nav]
 
-## Blog Show
-![blog-show]
+## Reading List Index
+![list-index]
 
-## Post Show
-![post-show]
+## Book Show
+![book-show]
 
-## Post Form
-![post-form]
+## Book Info
+![book-info]
 
 ## Search Results
 ![search-results]
 
-[user_login]: ./wireframes/user_login.png
-[feed-show]: ./wireframes/book_nav.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
+[user-login]: ./wireframes/user_login.png
+[book-nav]: ./wireframes/book_nav.png
+[list-index]: ./wireframes/list_index.png
+[book-show]: ./wireframes/book_show.png
+[book-info]: ./wireframes/book_info.png
 [search-results]: ./wireframes/search_results.png

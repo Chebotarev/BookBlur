@@ -34,18 +34,22 @@ I will write my own authentication system for creating users and logging in acco
 
 ### Phase 2: Reading Lists and Book Search (~ 1.5 days)
 I will create a form for creating a reading list. Then I will implement a search feature for books by title. Each result should have a button to allow adding the book to a particular list.
+
 [Details][phase-two]
 
 ### Phase 3: Book Navigation with an Index (~ 2.5 days)
 I will create the view for the book navigation page (the landing page after login). It will display the reading list index for the current user, with the book titles in each list. Clicking on the titles will display the book contents in the book show section. This functionality will be controlled by a Backbone app that has models and collections corresponding to lists and books.
+
 [Details][phase-three]
 
 ### Phase 4: Bookmarks and Notes (~ 2 days)
-I will add models for bookmarks and notes into the Backbone app. Bookmarks will be added dynamically with click event handlers on paragraph tags in the book content section. Notes will be associated with bookmarks through association. A list of bookmarks for the current book will be displayed in the Book Info section.
+I will add models for bookmarks and notes into the Backbone app. Bookmarks will be added dynamically with click event handlers on paragraph tags in the book content section. Notes will be associated with bookmarks and expanded when a bookmark is highlighted. A list of bookmarks for the current book will be displayed in the Book Info section.
+
 [Details][phase-four]
 
 ### Phase 5: Comments and Tags on Books (~ 1 day)
-I will add the ability for users to leave comments and tags on books in their collection. The Book Info section will have a tabs to switch between Bookmarks and Comments.
+I will add the ability for users to leave comments and tags on books in their collection. Comments will have a polymorphic association to allow for replies to comments. The Book Info section will have tabs to switch between Bookmarks and Comments.
+
 [Details][phase-five]
 
 ### Bonus Features (TBD)
