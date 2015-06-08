@@ -4,14 +4,17 @@
 ### Models
 * User
 * Book
+
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
 * BooksController (show, create, update, destroy)
+
 ### Views
 * users/new.html.erb
 * session/new.html.erb
 * books/index.html.erb (temp)
+
 ## Backbone
 ### Models
 

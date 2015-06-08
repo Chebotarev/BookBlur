@@ -3,10 +3,13 @@
 ## Rails
 ### Models
 * List
+
 ### Controllers
 * ListsController (create, update, destroy)
+
 ### Views
 * books/search.html.erb
+
 ## Backbone
 ### Models
 

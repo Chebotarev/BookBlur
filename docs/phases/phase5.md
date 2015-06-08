@@ -4,9 +4,11 @@
 ### Models
 * Comment
 * Tag
+
 ### Controllers
 * CommentsController (create, update, destroy)
 * TagsController (create, update, destroy)
+
 ### Views
 
 ## Backbone
@@ -16,4 +18,5 @@
 
 ### Views
 * BookInfo (other tab)
+
 ## Gems/Libraries

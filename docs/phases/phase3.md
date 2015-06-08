@@ -11,10 +11,13 @@
 ### Models
 * List
 * Book
+
 ### Collections
 * Lists
 * Books
+
 ### Views
 * BookNav
 * BookShow
+
 ## Gems/Libraries
