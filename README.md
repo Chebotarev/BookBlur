@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]:
+[heroku]: temp
 
 ## Minimum Viable Product
 BookBlur is clone of NewsBlur for reading and sharing open-source books. Users can:
@@ -10,7 +10,7 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 - [ ] Create accounts
 - [ ] Create sessions (log in)
 - [ ] View Books from the [Gutenberg project][gutenberg]
-- [ ]
+- [ ] 
 
 * [gutenberg]: https://www.gutenberg.org/
 
@@ -25,7 +25,6 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 ## Implementation Timeline
 
 ### Phase 1:
-
 
 [Details][phase-one]
 
@@ -46,7 +45,7 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] 
+- [ ]
 
 
 [phase-one]: ./docs/phases/phase1.md
