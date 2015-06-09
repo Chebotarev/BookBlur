@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require backbone
+//= require bootstrap
+//= require trello_clone
 //= require_tree .
