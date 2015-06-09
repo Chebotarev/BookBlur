@@ -7,8 +7,8 @@
 ## Minimum Viable Product
 BookBlur is clone of NewsBlur for reading and sharing open-source books. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [X] Create accounts
+- [X] Create sessions (log in)
 - [ ] View book content
 - [ ] Search for books
 - [ ] Create reading lists
