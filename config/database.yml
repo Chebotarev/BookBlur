@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: BookBlur_production
-  username: BookBlur
-  password: <%= ENV['BOOKBLUR_DATABASE_PASSWORD'] %>
