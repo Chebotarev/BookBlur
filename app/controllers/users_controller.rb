@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login!(@user)
-      redirect_to api_books_url
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

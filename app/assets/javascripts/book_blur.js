@@ -4,9 +4,6 @@ window.BookBlur = {
   Views: {},
   Routers: {},
   initialize: function() {
+    console.log("Backbone initialized");
   }
 };
-
-$(document).ready(function(){
-  BookBlur.initialize();
-});
