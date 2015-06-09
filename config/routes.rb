@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "books#index"
+  root to: "books#index"
 
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]

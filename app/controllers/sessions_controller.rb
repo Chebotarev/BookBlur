@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login!(user)
-      render json: user
+      redirect_to api_books_url
     end
   end
 
