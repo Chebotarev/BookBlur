@@ -31,6 +31,8 @@ gem 'backbone-on-rails'
 
 gem 'font-awesome-rails'
 
+gem 'bootstrap-sass'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
