@@ -7,6 +7,11 @@ class Api::BooksController < ApplicationController
     render json: @books
   end
 
+  def show
+    @book = Book.find(params[:id])
+    render @book.url
+  end
+
   private
 
   def ensure_logged_in

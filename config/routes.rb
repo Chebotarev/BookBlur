@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api do
-    resources :books, only: [:index]
+    resources :books, only: [:index, :show]
   end
 end

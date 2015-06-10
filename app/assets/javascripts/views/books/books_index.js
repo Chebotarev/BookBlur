@@ -8,7 +8,6 @@ BookBlur.Views.BooksIndex = Backbone.CompositeView.extend({
   },
 
   addBook: function (model) {
-    debugger
     var book = this.collection.get(model.id)
     var subview = new BookBlur.Views.BooksIndexItem({
       collection: this.collection,
