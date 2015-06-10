@@ -1,8 +1,8 @@
 # BookBlur
 
-<!-- [Heroku link][heroku]
+[Heroku link][heroku]
 
-[heroku]: temp -->
+[heroku]: https://bookblur.herokuapp.com
 
 ## Minimum Viable Product
 BookBlur is clone of NewsBlur for reading and sharing open-source books. Users can:
