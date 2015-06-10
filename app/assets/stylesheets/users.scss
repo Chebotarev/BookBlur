@@ -7,7 +7,12 @@ div.create-user {
   width: 1024px;
   // background-position: 50% 50%;
   // background-size: cover;
-  background-image: url('library2.jpg');
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('library2.jpg');
 }
 
 form.new-user {

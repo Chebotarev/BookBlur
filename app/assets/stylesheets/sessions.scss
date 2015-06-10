@@ -5,5 +5,9 @@
 div.sign-in {
   height: 667px;
   width: 1000px;
-  background-image: url('library.jpg');
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url('library.jpg');
 }

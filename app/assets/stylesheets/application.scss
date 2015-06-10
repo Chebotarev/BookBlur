@@ -17,7 +17,11 @@
  @import "bootstrap";
  @import "bootstrap-sprockets";
 
- .col-centered{
+.col-centered{
     float: none;
     margin: 0 auto;
+}
+
+.text-white {
+  color: white;
 }
