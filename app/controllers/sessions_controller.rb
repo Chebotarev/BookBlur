@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :check_logged_in, only: [:new]
 
   def new
     @user = User.new
@@ -22,5 +23,11 @@ class SessionsController < ApplicationController
   def destroy
     logout!
     redirect_to new_session_url
+  end
+
+  private
+
+  def check_logged_in
+    redirect_to root_url if logged_in?
   end
 end
