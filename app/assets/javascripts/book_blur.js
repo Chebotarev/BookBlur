@@ -8,6 +8,13 @@ window.BookBlur = {
       $rootEl: $('#content'),
       books: BookBlur.Collections.books
     });
+
+    var navbar = new BookBlur.Views.NavView({
+      router: router
+    });
+
+    $('#nav').html(navbar.$el);
+    navbar.render();
     Backbone.history.start();
   }
 };

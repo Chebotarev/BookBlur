@@ -1,10 +1,10 @@
 <main class="container">
-  <a href="#"><%= image_tag("logo.png", width: "200", alt: "bookblur-logo") %></a>
-  <a href="#search">Search</a>
+  <nav id="nav" class="navbar navbar-default"></nav>
   <div id="content"></div>
 </main>
 
 <script>
+  window.CURRENT_USERNAME = "<%= current_user.username %>"
   $(document).ready(function(){
     BookBlur.initialize();
   });
