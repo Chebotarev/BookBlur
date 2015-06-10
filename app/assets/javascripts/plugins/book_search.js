@@ -20,11 +20,16 @@ $.BookSearch.prototype.handleInput = function (event) {
   })
 };
 
-$.BookSearch.prototype.renderResults = function (response) {
+$.BookSearch.prototype.renderResults = function (books) {
   this.$results.empty();
-  response.forEach(function (result) {
-    var $li = $('<li>').text(result.title);
-    $li.appendTo(this.$results);
+  books.forEach(function (book) {
+    var $a = $('<a>').addClass('list-group-item').
+      addClass('list-group-item-success').
+      attr("href", "#").
+      text(book.title);
+      
+    $a.appendTo(this.$results);
+
   }.bind(this));
 };
 
