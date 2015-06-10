@@ -11,6 +11,6 @@ BookBlur.Views.BookSearch = Backbone.View.extend({
   },
 
   onRender: function () {
-    // $("div.search-container").usersSearch();
+    $("div.search-container").bookSearch();
   }
 });

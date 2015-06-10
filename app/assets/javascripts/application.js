@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require plugins/book_search
 //= require bootstrap
 //= require book_blur
 //= require_tree ./utils
