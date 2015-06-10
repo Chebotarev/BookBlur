@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609213253) do
+ActiveRecord::Schema.define(version: 20150610225314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,28 @@ ActiveRecord::Schema.define(version: 20150609213253) do
   add_index "books", ["author"], name: "index_books_on_author", using: :btree
   add_index "books", ["title", "author", "url"], name: "index_books_on_title_and_author_and_url", unique: true, using: :btree
   add_index "books", ["title"], name: "index_books_on_title", using: :btree
+
+  create_table "listings", force: :cascade do |t|
+    t.integer  "list_id",    null: false
+    t.integer  "book_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "listings", ["book_id"], name: "index_listings_on_book_id", using: :btree
+  add_index "listings", ["list_id"], name: "index_listings_on_list_id", using: :btree
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.integer  "owner_id",    null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "lists", ["owner_id"], name: "index_lists_on_owner_id", using: :btree
+  add_index "lists", ["title", "owner_id"], name: "index_lists_on_title_and_owner_id", unique: true, using: :btree
+  add_index "lists", ["title"], name: "index_lists_on_title", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
