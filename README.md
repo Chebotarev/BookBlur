@@ -11,7 +11,7 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 
 - [X] Create accounts
 - [X] Create sessions (log in)
-- [ ] View book content
+- [X] View book content
 - [ ] Search for books
 - [ ] Create reading lists
 - [ ] Create and view bookmarks
@@ -45,12 +45,12 @@ I will create the view for the book navigation page (the landing page after logi
 [Details][phase-three]
 
 ### Phase 4: Bookmarks and Notes (~ 2 days)
-I will add models for bookmarks and notes into the Backbone app. Bookmarks will be added dynamically with click event handlers on paragraph tags in the book content section. Notes will be associated with bookmarks and expanded when a bookmark is highlighted. A list of bookmarks for the current book will be displayed in the Book Info section.
+I will add models for bookmarks into the Backbone app. Bookmarks will be added dynamically with click event handlers on paragraph tags in the book content section. Bookmarks will have a body column that will expand when a bookmark is highlighted. A list of bookmarks for the current book will be displayed in the Book Info section.
 
 [Details][phase-four]
 
 ### Phase 5: Comments and Tags on Books (~ 1 day)
-I will add the ability for users to leave comments and tags on books in their collection. Comments will have a polymorphic association to allow for replies to comments. The Book Info section will have tabs to switch between Bookmarks and Comments.
+I will add the ability for users to leave comments and tags on books in their collection. Comments will be nested to allow for replies to comments. The Book Info section will have tabs to switch between Bookmarks and Comments.
 
 [Details][phase-five]
 

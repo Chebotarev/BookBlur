@@ -36,7 +36,6 @@ list_id     | integer   | not null, foreign key (references lists)
 book_id     | integer   | not null, foreign key (references books)
 
 
-
 ## bookmarks
 column name | data type | details
 ------------|-----------|-----------------------
@@ -44,14 +43,6 @@ id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 book_id     | integer   | not null, foreign key (references books)
 paragraph   | integer   | not null
-
-
-## notes
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
-bookmark_id | integer   | not null, foreign key (references bookmarks)
 body        | text      |
 
 
@@ -59,8 +50,8 @@ body        | text      |
 column name       | data type | details
 ------------------|-----------|-----------------------
 id                | integer   | not null, primary key
-commentable_id    | integer   | not null, foreign key (polymorphic)
-commentable_type  | string    | not null, polymorphic type
+book_id           | integer   | not null, foreign key (references books)
+parent_comment_id | integer   | foreign key (references comments)
 body              | text      |
 
 
@@ -69,6 +60,7 @@ column name       | data type | details
 ------------------|-----------|-----------------------
 id                | integer   | not null, primary key
 name              | string    | not null
+
 
 ## taggings
 column name       | data type | details

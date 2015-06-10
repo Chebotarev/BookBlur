@@ -10,11 +10,9 @@
 ## Backbone
 ### Models
 * Bookmark
-* Note
 
 ### Collections
 * Bookmarks
-* Notes
 
 ### Views
 * BookShow
