@@ -4,7 +4,13 @@ BookBlur.Views.BooksIndex = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "add", this.addBook);
+    this.listenTo(this.collection, "sync", this.addAllBooks);
+  },
+
+  addAllBooks: function (collection) {
+    collection.each(function (book) {
+      this.addBook(book)
+    }.bind(this));
   },
 
   addBook: function (model) {

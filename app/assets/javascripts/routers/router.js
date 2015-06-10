@@ -6,7 +6,7 @@ BookBlur.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "search/": "search"
+    "search": "search"
   },
 
   index: function () {
