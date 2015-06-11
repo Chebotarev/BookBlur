@@ -4,6 +4,7 @@
 </main>
 
 <script>
+  window.CURRENT_USERID = "<%= current_user.id %>"
   window.CURRENT_USERNAME = "<%= current_user.username %>"
   $(document).ready(function(){
     BookBlur.initialize();
