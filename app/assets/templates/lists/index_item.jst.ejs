@@ -1,2 +1,12 @@
-<%= list.escape('title') %>
-<button class="btn-xs btn-info">></button>
+<div class="panel-heading">
+  <%= list.escape('title') %>
+  <button class="btn-xs btn-info">></button>
+</div>
+
+<div class="panel-body">
+  <% if (list.escape('description') === "") { %>
+    <i>No description</i>
+  <% } else { %>
+    <p><%= list.escape('description') %></p>
+  <% } %>
+</div>
