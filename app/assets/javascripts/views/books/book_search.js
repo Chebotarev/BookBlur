@@ -3,6 +3,16 @@ BookBlur.Views.BookSearch = Backbone.View.extend({
 
   className: "container search-container",
 
+  events: {
+    "click .search-result": "listMenu"
+  },
+
+  listMenu: function (event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    debugger
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);

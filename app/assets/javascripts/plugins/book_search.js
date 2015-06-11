@@ -25,9 +25,11 @@ $.BookSearch.prototype.renderResults = function (books) {
   books.forEach(function (book) {
     var $a = $('<a>').addClass('list-group-item').
       addClass('list-group-item-success').
+      addClass('search-result').
       attr("href", "#").
+      data("id", book.id).
       text(book.title);
-      
+
     $a.appendTo(this.$results);
 
   }.bind(this));
