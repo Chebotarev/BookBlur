@@ -23,13 +23,20 @@ $.BookSearch.prototype.handleInput = function (event) {
 $.BookSearch.prototype.renderResults = function (books) {
   this.$results.empty();
   books.forEach(function (book) {
-    var $a = $('<a>').addClass('list-group-item').
-      addClass('list-group-item-success').
+    var $btn = $('<button>').
+      addClass('btn-sm').
+      addClass('btn-success').
+      text("Add")
+
+    var $a = $('<a>').
+      addClass('list-group-item').
+      addClass('list-group-item').
       addClass('search-result').
       attr("href", "#").
       data("id", book.id).
-      text(book.title);
+      text(" " + book.title);
 
+    $a.prepend($btn);
     $a.appendTo(this.$results);
 
   }.bind(this));
