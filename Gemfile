@@ -33,6 +33,8 @@ gem 'font-awesome-rails'
 
 gem 'bootstrap-sass'
 
+gem 'newrelic_rpm'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
