@@ -1,26 +1,32 @@
 BookBlur.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.collection = options.books;
+    this.books = options.books;
   },
 
   routes: {
     "": "index",
-    "search": "search"
+    "search": "search",
+    "list/new": "newList"
   },
 
   index: function () {
-    this.collection.fetch();
+    this.books.fetch();
     var view = new BookBlur.Views.BooksIndex({
-      collection: this.collection
+      collection: this.books
     });
     this._swapView(view)
   },
 
+  newList: function () {
+    var view = new BookBlur.Views.ListNew();
+    this._swapView(view);
+  },
+
   search: function () {
-    this.collection.fetch();
+    this.books.fetch();
     var view = new BookBlur.Views.BookSearch({
-      collection: this.collection
+      collection: this.books
     });
     this._swapView(view);
   },
