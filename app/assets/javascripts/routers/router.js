@@ -2,6 +2,7 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.books = options.books;
+    this.lists = options.lists;
   },
 
   routes: {
@@ -19,7 +20,9 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   },
 
   newList: function () {
-    var view = new BookBlur.Views.ListNew();
+    var view = new BookBlur.Views.ListNew({
+      collection: this.lists
+    });
     this._swapView(view);
   },
 

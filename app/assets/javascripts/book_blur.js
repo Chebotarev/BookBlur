@@ -5,11 +5,11 @@ window.BookBlur = {
   Routers: {},
   initialize: function() {
     var lists = BookBlur.Collections.lists;
-    lists.fetch();
 
     var router = new BookBlur.Routers.Router({
       $rootEl: $('#content'),
-      books: BookBlur.Collections.books
+      books: BookBlur.Collections.books,
+      lists: lists
     });
 
     var navbar = new BookBlur.Views.NavView({

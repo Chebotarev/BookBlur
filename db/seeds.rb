@@ -1,5 +1,5 @@
 user1 = User.create!(
-  username: "cheb",
+  username: "Alex",
   email: "test@example.com",
   password: "password"
 )
@@ -37,6 +37,18 @@ list2 = List.create!(
   title: "Many Books, With Desc",
   owner_id: user1.id,
   description: "This Reading List has two books! And a description!"
+)
+
+list3 = List.create!(
+  title: "No Books Here",
+  owner_id: user1.id,
+  description: "This list has no books"
+)
+
+list4 = List.create!(
+  title: "Not My List",
+  owner_id: user2.id,
+  description: "This list does not belong to Alex"
 )
 
 listing1 = Listing.create!(

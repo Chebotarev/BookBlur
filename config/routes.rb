@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     get 'books/search', to: "books#search"
     resources :books, only: [:index, :show]
-    resources :lists, only: [:index]
+    resources :lists, only: [:index, :create]
   end
 end
