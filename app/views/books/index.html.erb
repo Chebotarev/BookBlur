@@ -1,7 +1,11 @@
 <nav id="nav" class="navbar navbar-default"></nav>
-<main class="container">
-  <div id="content"></div>
-</main>
+<div class="row">
+  <aside id="sidebar" class="col-xs-2"></aside>
+
+  <main class="container col-xs-10">
+      <div id="content"></div>
+  </main>
+</div>
 
 <script>
   window.CURRENT_USERID = "<%= current_user.id %>"

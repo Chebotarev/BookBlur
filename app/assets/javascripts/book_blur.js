@@ -4,6 +4,9 @@ window.BookBlur = {
   Views: {},
   Routers: {},
   initialize: function() {
+    var lists = BookBlur.Collections.lists;
+    lists.fetch();
+
     var router = new BookBlur.Routers.Router({
       $rootEl: $('#content'),
       books: BookBlur.Collections.books
@@ -15,6 +18,15 @@ window.BookBlur = {
 
     $('#nav').html(navbar.$el);
     navbar.render();
+
+    var sidebar = new BookBlur.Views.SidebarView({
+      router: router,
+      lists: lists
+    });
+
+    $('#sidebar').html(sidebar.$el);
+    sidebar.render();
+
     Backbone.history.start();
   }
 };
