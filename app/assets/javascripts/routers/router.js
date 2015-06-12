@@ -20,8 +20,10 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   },
 
   newList: function () {
+    this.books.fetch();
     var view = new BookBlur.Views.ListNew({
-      collection: this.lists
+      lists: this.lists,
+      books: this.books
     });
     this._swapView(view);
   },

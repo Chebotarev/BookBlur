@@ -9,7 +9,8 @@ class Api::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    render @book.url
+
+    render json: @book
   end
 
   def search

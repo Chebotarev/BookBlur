@@ -1,2 +1,8 @@
-<button class="btn-sm btn-success add-book-btn">Add</button>
-<b><%= book.title %></b> <i>by <%= book.author %></i>
+<form class="add-book">
+  <input type="submit" class="btn-sm btn-success">
+  <b><%= book.title %></b> <i>by <%= book.author %></i>
+
+  <input type="hidden" name="book[id]" value="<%= book.id %>">
+  <input type="hidden" name="book[title]" value="<%= book.title %>">
+  <input type="hidden" name="book[author]" value="<%= book.author %>">
+</form>
