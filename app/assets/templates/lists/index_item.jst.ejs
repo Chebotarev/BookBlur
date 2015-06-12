@@ -3,11 +3,10 @@
   <button class="btn-xs btn-info expand-list glyphicon glyphicon-menu-right"></button>
 </div>
 
-<div class="panel-body">
-  <% if (list.escape('description') === "") { %>
-    <p class="list-desc"<i>No description</i></p>
-  <% } else { %>
+<% if (list.escape('description') !== "") { %>
+  <div class="panel-body">
     <p class="list-desc"><%= list.escape('description') %></p>
   <% } %>
 </div>
-  <ul class="list-group books-list"></ul>
+
+<ul class="list-group books-list"></ul>

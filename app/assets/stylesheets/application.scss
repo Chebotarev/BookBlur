@@ -85,3 +85,8 @@ p.list-title {
 .panel-heading {
   position: relative;
 }
+
+.book-card:hover {
+  cursor: pointer;
+  background-color: rgb(186, 186, 186);
+}

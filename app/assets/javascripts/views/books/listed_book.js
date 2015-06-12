@@ -3,10 +3,18 @@ BookBlur.Views.ListedBook = Backbone.View.extend({
 
   tagName: "li",
 
-  className: "list-group-item",
+  className: "list-group-item book-card",
+
+  attributes: function() {
+    return {
+      "data-id": this.model.id
+    }
+  },
 
   initialize: function (options) {
     this.listenTo(this.model, "sync add", this.render);
+
+    this.on("click", this.showBook);
   },
 
   render: function () {
