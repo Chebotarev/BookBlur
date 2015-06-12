@@ -30,15 +30,11 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.navbar-brand {
-  position: absolute;
-  top: 0;
-}
-
 aside#sidebar {
   border: 1px solid #ccc;
   border-radius: 5px;
   min-height: 90vh;
+  padding-left: 25px;
 }
 
 div#new-list-books-container {
