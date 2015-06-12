@@ -3,13 +3,16 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
 
   className: "panel panel-default",
 
-  initialize: function () {
-    this.listenTo(this.model.books(), "sync", this.render);
-
-    this.addAllBooks();
+  events: {
+    "click .expand-list": "expand",
+    "click .collapse-list": "collapse"
   },
 
-  addAllBooks: function (event) {
+  initialize: function () {
+    this.listenTo(this.model.books(), "sync", this.render);
+  },
+
+  addAllBooks: function () {
     var books = this.model.books();
     books.each(function (book) {
       this.addBook(book);
@@ -22,6 +25,26 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
     })
     this.addSubview('.books-list', subview);
     this.render();
+  },
+
+  collapse: function () {
+    this.removeAllBooks();
+    var $target = this.$('.collapse-list');
+    $target.removeClass("collapse-list");
+    $target.addClass("expand-list");
+  },
+
+  expand: function () {
+    this.addAllBooks();
+    var $target = this.$('.expand-list');
+    $target.removeClass("expand-list");
+    $target.addClass("collapse-list");
+  },
+
+  removeAllBooks: function () {
+    this.model.books().each(function (book) {
+      this.removeModelSubview('.books-list', book);
+    }.bind(this));
   },
 
   render: function () {

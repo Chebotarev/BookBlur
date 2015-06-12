@@ -3,8 +3,6 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
   template: JST['lists/index'],
 
   initialize: function () {
-    //maybe dont need add here?
-    // this.listenTo(this.collection, "sync add", this.render);
     this.listenTo(this.collection, "reset", this.addAllListIndexItems);
     this.listenTo(this.collection, "add", this.addListIndexItem);
   },
@@ -16,7 +14,6 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
   },
 
   addListIndexItem: function (list) {
-    list.books().fetch();
     var subView = new BookBlur.Views.ListsIndexItem({
       model: list
     });
