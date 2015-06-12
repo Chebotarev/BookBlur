@@ -6,7 +6,6 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
   },
 
   getResults: function (event) {
-    // debugger
     if (event.keyCode !== 16) {
       var view = this;
       view.eachSubview(view.removeResult.bind(view));

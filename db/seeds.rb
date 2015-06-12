@@ -13,19 +13,19 @@ user2 = User.create!(
 book1 = Book.create!(
   title: "A Christmas Carol",
   author: "Charles Dickens",
-  url: "/books/A_Christmas_Carol.html"
+  url: "http://localhost:3000/book_source/A_Christmas_Carol.html"
 )
 
 book2 = Book.create!(
   title: "Metamorphosis",
   author: "Franz Kafka",
-  url: "/books/Metamorphosis.html"
+  url: "http://localhost:3000/book_source/Metamorphosis.html"
 )
 
 book3 = Book.create!(
   title: "The Call of the Wild",
   author: "Jack London",
-  url: "/books/The_Call_of_the_Wild.html"
+  url: "http://localhost:3000/book_source/The_Call_of_the_Wild.html"
 )
 
 list1 = List.create!(
