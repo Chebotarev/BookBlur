@@ -1,4 +1,4 @@
-BookBlur.Views.ListsIndexItem = Backbone.View.extend({
+BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
   template: JST['lists/index_item'],
 
   className: "panel panel-default",
@@ -8,6 +8,7 @@ BookBlur.Views.ListsIndexItem = Backbone.View.extend({
       list: this.model
     });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });

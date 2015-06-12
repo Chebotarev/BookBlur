@@ -1,5 +1,5 @@
 user1 = User.create!(
-  username: "Alex",
+  username: "Guest",
   email: "test@example.com",
   password: "password"
 )
