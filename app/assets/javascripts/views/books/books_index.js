@@ -2,6 +2,8 @@ BookBlur.Views.BooksIndex = Backbone.CompositeView.extend({
 
   template: JST['books/index'],
 
+  className: "books-index",
+
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "sync", this.addAllBooks);
@@ -19,13 +21,14 @@ BookBlur.Views.BooksIndex = Backbone.CompositeView.extend({
       collection: this.collection,
       model: book
     });
-    this.addSubview(".books-index", subview);
+    this.addSubview("#books-index", subview);
   },
 
   render: function () {
-    var content = this.template({
-      books: this.collection
-    });
+    // var content = this.template({
+    //   books: this.collection
+    // });
+    var content = "Hello"
     this.$el.html(content);
     this.attachSubviews();
     return this;

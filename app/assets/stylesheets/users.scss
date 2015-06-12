@@ -7,7 +7,7 @@ main.create-user {
     linear-gradient(
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
-    ), url(<%= asset_path 'library2.jpg' %>);
+    ), image-url('library2.jpg');
   background-size: cover;
   height: 100vh;
   width: 100vw;

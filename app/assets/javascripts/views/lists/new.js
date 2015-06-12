@@ -24,7 +24,7 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
     book.id = parseInt($(event.currentTarget).serializeJSON().book.id);
     this.book_ids.push(book.id);
     var subview = new BookBlur.Views.ListedBook({
-      model: book,
+      model: new BookBlur.Models.Book(book),
       collection: this.books
     });
     this.addSubview('#new-list-books', subview);

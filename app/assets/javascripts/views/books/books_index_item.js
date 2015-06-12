@@ -3,6 +3,8 @@ BookBlur.Views.BooksIndexItem = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render)
+
+    this.$('.book_container').load("http://localhost:3000/book_source/Metamorphosis.html")
   },
 
   render: function () {

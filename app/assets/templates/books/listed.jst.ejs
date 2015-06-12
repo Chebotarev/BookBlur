@@ -1,2 +1,2 @@
-<b> <%= book.title %></b> <i>by <%= book.author %></i>
+<b> <%= book.get('title') %></b> <i>by <%= book.get('author') %></i>
 <button class="btn-xs btn-danger remove-book" data-id="<%= book.id %>">&times;</button>

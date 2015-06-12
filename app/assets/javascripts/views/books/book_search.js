@@ -2,22 +2,20 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
   template: JST['books/search'],
 
   events: {
-    "keydown input": "getResults"
+    "keyup input": "getResults"
   },
 
   getResults: function (event) {
+    // debugger
     if (event.keyCode !== 16) {
       var view = this;
       view.eachSubview(view.removeResult.bind(view));
-
-      setTimeout(function () {
-        $.ajax({
-          url: "api/books/search",
-          dataType: "json",
-          data: { query: $(event.target).val() },
-          success: view.addAllResults.bind(view)
-        })
-      }, 0);
+      $.ajax({
+        url: "api/books/search",
+        dataType: "json",
+        data: { query: $(event.target).val() },
+        success: view.addAllResults.bind(view)
+      })
     }
   },
 
