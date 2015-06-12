@@ -13,8 +13,24 @@ BookBlur.Views.ListedBook = Backbone.View.extend({
 
   initialize: function (options) {
     this.listenTo(this.model, "sync add", this.render);
+    this.listenTo(Backbone.history, "route", this.markSelected);
 
-    this.on("click", this.showBook);
+    this.parseRoute(Backbone.history.getFragment());
+  },
+
+  parseRoute: function (route) {
+    if (route.startsWith("book/")) {
+      var bookId = parseInt(route.slice(5));
+      this.markSelected({}, "show", bookId);
+    }
+  },
+
+  markSelected: function (router, route, params) {
+    if (route === "show" && parseInt(params) === this.model.id) {
+      this.$el.addClass("selected");
+    } else {
+      this.$el.removeClass("selected");
+    }
   },
 
   render: function () {

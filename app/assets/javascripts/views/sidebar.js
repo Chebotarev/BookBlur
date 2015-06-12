@@ -10,7 +10,8 @@ BookBlur.Views.SidebarView = Backbone.CompositeView.extend({
     this.lists.fetch();
 
     var listIndex = new BookBlur.Views.ListsIndex({
-      collection: this.lists
+      collection: this.lists,
+      router: this.router
     });
     this.addSubview('#lists-index', listIndex);
 

@@ -6,7 +6,10 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
     "click .book-card": "showBook"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.router = options.router;
+    this.currentBook = null;
+
     this.listenTo(this.collection, "reset", this.addAllListIndexItems);
     this.listenTo(this.collection, "add", this.addListIndexItem);
   },
@@ -21,7 +24,7 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
     var subView = new BookBlur.Views.ListsIndexItem({
       model: list
     });
-    this.addSubview('#list-index-items', subView)
+    this.addSubview('#list-index-items', subView);
   },
 
   showBook: function (event) {
