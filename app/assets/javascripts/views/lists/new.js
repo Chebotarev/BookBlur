@@ -5,13 +5,15 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
 
   events: {
     "submit #new-list-form": "createList",
-    "submit .add-book": "addBook"
+    "submit .add-book": "addBook",
+    "click .remove-book": "removeBook"
   },
 
   initialize: function (options) {
     this.lists = options.lists;
     this.books = options.books;
 
+    this.book_ids = [];
     this.addSubview('#new-form-search', new BookBlur.Views.BookSearch());
   },
 
@@ -20,23 +22,35 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
     event.stopPropagation();
     var book = $(event.currentTarget).serializeJSON().book;
     book.id = parseInt($(event.currentTarget).serializeJSON().book.id);
+    this.book_ids.push(book.id);
     var subview = new BookBlur.Views.ListedBook({
       model: book,
       collection: this.books
     });
-    this.addSubview('#new-list-books', subview)
+    this.addSubview('#new-list-books', subview);
   },
 
   createList: function (event) {
     event.preventDefault();
+    var view = this;
     var formData = $(event.currentTarget).serializeJSON();
-    var listData = formData.list;
-    var list = new BookBlur.Models.List(listData);
+    formData.list['book_ids'] = view.book_ids;
+    var list = new BookBlur.Models.List(formData);
     list.save({}, {
       success: function () {
-        this.collection.add(list);
-      }.bind(this)
+        view.lists.add(list);
+      }
     });
+  },
+
+  removeBook: function (event) {
+    var $target = $(event.currentTarget);
+    var targetId = $target.attr("data-id");
+    var index = this.book_ids.indexOf(parseInt(targetId));
+    if (index !== -1) {
+      this.book_ids.splice(index, 1);
+    }
+    $target.parent().remove();
   },
 
   render: function () {

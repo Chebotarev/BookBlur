@@ -19,7 +19,7 @@ class Api::ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:title, :description)
+    params.require(:list).permit(:title, :description, book_ids: [])
   end
 
   def ensure_logged_in
