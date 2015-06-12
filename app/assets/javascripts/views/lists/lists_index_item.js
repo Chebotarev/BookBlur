@@ -31,14 +31,22 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
     this.removeAllBooks();
     var $target = this.$('.collapse-list');
     $target.removeClass("collapse-list");
+    $target.removeClass("glyphicon-menu-down");
+
     $target.addClass("expand-list");
+    $target.addClass("glyphicon-menu-right");
+
   },
 
   expand: function () {
     this.addAllBooks();
     var $target = this.$('.expand-list');
+
     $target.removeClass("expand-list");
+    $target.removeClass("glyphicon-menu-right");
+
     $target.addClass("collapse-list");
+    $target.addClass("glyphicon-menu-down");
   },
 
   removeAllBooks: function () {
