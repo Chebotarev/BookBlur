@@ -15,6 +15,7 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
   },
 
   addListIndexItem: function (list) {
+    list.books().fetch();
     var subView = new BookBlur.Views.ListsIndexItem({
       model: list
     });
