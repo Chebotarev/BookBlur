@@ -3,6 +3,7 @@ class Api::ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @lists.includes :books
   end
 
   def create

@@ -3,5 +3,6 @@ json.array!(@lists) do |list|
     json.id list.id
     json.title list.title
     json.description list.description
+    json.books list.books
   end
 end
