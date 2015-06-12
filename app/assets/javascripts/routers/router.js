@@ -6,7 +6,7 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index",
+    "": "news",
     "search": "search",
     "list/new": "newList",
     "book/:id": "show"
@@ -18,6 +18,11 @@ BookBlur.Routers.Router = Backbone.Router.extend({
       collection: this.books
     });
     this._swapView(view)
+  },
+
+  news: function () {
+    var view = new BookBlur.Views.NewsFeed();
+    this._swapView(view);
   },
 
   newList: function () {

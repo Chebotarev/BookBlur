@@ -28,7 +28,7 @@ BookBlur.Views.BooksIndex = Backbone.CompositeView.extend({
     // var content = this.template({
     //   books: this.collection
     // });
-    var content = "LEGACY INDEX"
+    var content = "<h2>News Feed</h2><h4>TBI</h4>"
     this.$el.html(content);
     this.attachSubviews();
     return this;
