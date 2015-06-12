@@ -34,7 +34,7 @@
 aside#sidebar {
   border: 1px solid #ccc;
   border-radius: 5px;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 div#new-list-books-container {
@@ -47,4 +47,41 @@ div#new-list-books-container {
   padding-left: 20px;
   border-left: 1px solid #ccc;
   min-height: 100vh;
+}
+
+.expand-list {
+  position: absolute;
+  right: 3px;
+  top: 9px;}
+
+.collapse-list {
+  position: absolute;
+  right: 3px;
+  top: 9px;}
+
+.remove-book {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.add-book-btn {
+  margin-right: 20px;
+}
+
+nav#nav {
+  margin-bottom: 0;
+}
+
+p.list-desc {
+  font-size: smaller;
+}
+
+p.list-title {
+  font-weight: 500;
+  margin-right: 18px;
+}
+
+.panel-heading {
+  position: relative;
 }

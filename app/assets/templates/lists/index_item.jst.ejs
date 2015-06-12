@@ -1,13 +1,13 @@
 <div class="panel-heading">
-  <%= list.escape('title') %>
+  <p class="list-title"><%= list.escape('title') %></p>
   <button class="btn-xs btn-info expand-list glyphicon glyphicon-menu-right"></button>
 </div>
 
 <div class="panel-body">
   <% if (list.escape('description') === "") { %>
-    <i>No description</i>
+    <p class="list-desc"<i>No description</i></p>
   <% } else { %>
-    <p><%= list.escape('description') %></p>
+    <p class="list-desc"><%= list.escape('description') %></p>
   <% } %>
 </div>
   <ul class="list-group books-list"></ul>
