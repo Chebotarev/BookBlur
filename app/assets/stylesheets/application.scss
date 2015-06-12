@@ -37,6 +37,12 @@ aside#sidebar {
   min-height: 100vh;
 }
 
+div#new-list-books-container {
+  border: 1px solid #ccc;
+  height: 200px;
+  overflow-y: scroll;
+}
+
 #new-form-search {
   padding-left: 20px;
   border-left: 1px solid #ccc;

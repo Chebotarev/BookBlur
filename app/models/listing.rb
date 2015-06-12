@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  validates :list_id, :book_id, presence: true
+  validates :book_id, :list, presence: true
 
   belongs_to :list
   belongs_to :book

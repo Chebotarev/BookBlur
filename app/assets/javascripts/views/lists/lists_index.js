@@ -2,8 +2,6 @@ BookBlur.Views.ListsIndex = Backbone.CompositeView.extend({
 
   template: JST['lists/index'],
 
-  // className: "panel panel-default",
-
   initialize: function () {
     this.listenTo(this.collection, "sync add", this.render);
     this.listenTo(this.collection, "reset", this.addAllListIndexItems);

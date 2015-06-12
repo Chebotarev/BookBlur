@@ -15,7 +15,6 @@
 //= require underscore
 //= require backbone
 //= require assets
-//= require plugins/book_search
 //= require bootstrap
 //= require book_blur
 //= require_tree ./utils

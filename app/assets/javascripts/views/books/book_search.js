@@ -1,26 +1,47 @@
-BookBlur.Views.BookSearch = Backbone.View.extend({
+BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
   template: JST['books/search'],
 
-  className: "container search-container",
-
   events: {
-    "click .search-result": "listMenu"
+    "keydown input": "getResults"
   },
 
-  listMenu: function (event) {
-    event.preventDefault();
-    var $target = $(event.target);
-    debugger
+  getResults: function (event) {
+    if (event.keyCode !== 16) {
+      var view = this;
+      view.eachSubview(view.removeResult.bind(view));
+
+      setTimeout(function () {
+        $.ajax({
+          url: "api/books/search",
+          dataType: "json",
+          data: { query: $(event.target).val() },
+          success: view.addAllResults.bind(view)
+        })
+      }, 0);
+    }
+  },
+
+  addAllResults: function (books) {
+    books.forEach(function (book) {
+      this.addResult(book);
+    }.bind(this));
+  },
+
+  addResult: function (book) {
+    var subview = new BookBlur.Views.BookSearchResult({
+      model: book
+    });
+    this.addSubview('.search-results', subview);
+  },
+
+  removeResult: function (subview) {
+    subview.remove();
   },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.onRender();
+    this.attachSubviews();
     return this;
-  },
-
-  onRender: function () {
-    $("div.search-container").bookSearch();
   }
 });

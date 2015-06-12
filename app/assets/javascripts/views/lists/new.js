@@ -1,11 +1,27 @@
-BookBlur.Views.ListNew = Backbone.View.extend({
+BookBlur.Views.ListNew = Backbone.CompositeView.extend({
   template: JST['lists/new'],
 
   className: "container",
 
   events: {
-    "submit #new-list-form": "createList"
+    "submit #new-list-form": "createList",
+    // "click .add-book-btn": "addBook"
   },
+
+  initialize: function (options) {
+    this.addSubview('#new-form-search', new BookBlur.Views.BookSearch());
+  },
+
+  // addBook: function (event) {
+  //   var bookData = $(event.currentTarget).data();
+  //
+  //   if (true) {
+  //     var $li = $('<li>').
+  //       addClass('list-group-item').
+  //       text(bookData.title)
+  //     $li.appendTo('#new-list-books')
+  //   }
+  // },
 
   createList: function (event) {
     event.preventDefault();
@@ -22,11 +38,8 @@ BookBlur.Views.ListNew = Backbone.View.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.onRender();
+    this.attachSubviews();
     return this;
   },
 
-  onRender: function () {
-    $(".search-container").bookSearch();
-  }
 });
