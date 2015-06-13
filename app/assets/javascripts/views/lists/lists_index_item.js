@@ -38,6 +38,12 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
 
   },
 
+  disbaleBtn: function ($button) {
+    $button.attr("disabled", "disabled").
+      removeClass("btn-info").
+      addClass("btn-default");
+  },
+
   expand: function () {
     this.addAllBooks();
     var $target = this.$('.expand-list');
@@ -59,7 +65,13 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
     var content = this.template({
       list: this.model
     });
+
     this.$el.html(content);
+
+    if (this.model.books().length === 0) {
+      this.disbaleBtn(this.$el.find('.expand-list'));
+    }
+
     this.attachSubviews();
     return this;
   }
