@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #book-container {
-  max-height: 90vh;
-  overflow-y: scroll;
+  max-height: 85vh;
+  overflow-y: hidden;
+  margin-top: 15px;
 }

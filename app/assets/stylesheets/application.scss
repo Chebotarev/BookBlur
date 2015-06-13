@@ -17,6 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ html, body {
+   max-width: 100%;
+   overflow-x: hidden;
+ }
+
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
@@ -30,12 +35,16 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+main.full-height {
+  height: calc(100vh - 50px);
+}
+
 aside#sidebar {
   border: 1px solid #ccc;
   border-top: none;
-  min-height: 90vh;
   padding-left: 25px;
   padding-top: 20px;
+  height: inherit;
 }
 
 div#new-list-books-container {

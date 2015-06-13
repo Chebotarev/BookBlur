@@ -1,6 +1,10 @@
 BookBlur.Views.BookShow = Backbone.View.extend({
   template: JST['books/show'],
 
+  events: {
+    
+  },
+
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
   },
