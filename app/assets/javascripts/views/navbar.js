@@ -3,7 +3,8 @@ BookBlur.Views.NavView = Backbone.View.extend({
   template: JST['navbar'],
 
   events: {
-    "click #logout": "logout"
+    "click #logout": "logout",
+    "click .navbar-search": "search"
   },
 
   initialize: function (options) {
@@ -16,10 +17,13 @@ BookBlur.Views.NavView = Backbone.View.extend({
       type: 'POST',
       data: {_method: 'delete'},
       success: function (html, status, object) {
-        window.location = "session/new"
+        window.location = "session/new";
       }
     });
+  },
 
+  search: function () {
+    debugger;
   },
 
   render: function () {
