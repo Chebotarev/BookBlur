@@ -37,22 +37,24 @@
         <input type="submit" class="btn btn-primary" value="Sign In">
       </form>
 
-      <br>
-      <label class="text-white">New to BookBlur?</label><br>
-      <a href="<%= new_user_url %>"><button class="btn btn-success">Create User</button></a>
-      <form class="" action="<%= session_url %>" method="post">
-        <input
-          type="hidden"
-          name="authenticity_token"
-          value="<%= form_authenticity_token %>"
-        >
-
-        <input type="hidden" name="user[email]" value="test@example.com">
-        <input type="hidden" name="user[password]" value="password">
-
+      <div class="login-options">  
         <br>
-        <input class="btn btn-info" type="submit" value="Guest Login">
-      </form>
+        <label class="text-white">New to BookBlur?</label><br>
+        <a href="<%= new_user_url %>"><button class="btn btn-success">Create User</button></a>
+        <form class="" action="<%= session_url %>" method="post">
+          <input
+            type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>"
+          >
+
+          <input type="hidden" name="user[email]" value="test@example.com">
+          <input type="hidden" name="user[password]" value="password">
+
+          <br>
+          <input class="btn btn-info" type="submit" value="Guest Login">
+        </form>
+      </div>
     </div>
 
   </div>

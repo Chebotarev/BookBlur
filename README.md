@@ -13,7 +13,7 @@ BookBlur is clone of NewsBlur for reading and sharing open-source books. Users c
 - [X] Create sessions (log in)
 - [X] View book content
 - [X] Search for books
-- [ ] Create reading lists
+- [X] Create reading lists
 - [ ] Create and view bookmarks
 - [ ] Attach notes to bookmarks
 - [ ] Post comments on books
