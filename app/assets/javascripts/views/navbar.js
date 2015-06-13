@@ -1,14 +1,15 @@
-BookBlur.Views.NavView = Backbone.View.extend({
+BookBlur.Views.NavView = Backbone.CompositeView.extend({
 
   template: JST['navbar'],
 
   events: {
-    "click #logout": "logout",
-    "click .navbar-search": "search"
+    "click #logout": "logout"
   },
 
   initialize: function (options) {
     this.router = options.router;
+
+    this.addSubview('.navbar-search', new BookBlur.Views.BookSearch());
   },
 
   logout: function (event) {
@@ -22,13 +23,10 @@ BookBlur.Views.NavView = Backbone.View.extend({
     });
   },
 
-  search: function () {
-    debugger;
-  },
-
   render: function () {
     var content = this.template();
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });
