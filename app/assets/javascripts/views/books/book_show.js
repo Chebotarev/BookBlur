@@ -1,8 +1,10 @@
 BookBlur.Views.BookShow = Backbone.View.extend({
   template: JST['books/show'],
 
+  id: "book-container",
+
   events: {
-    
+
   },
 
   initialize: function (options) {
@@ -10,15 +12,13 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({
-      book: this.model
-    });
+    var content = this.template();
     this.$el.html(content);
     this.onRender();
     return this;
   },
 
   onRender: function () {
-    $('#book-container').load(this.model.get('url'));
+    this.$el.load(this.model.get('url'));
   }
 });
