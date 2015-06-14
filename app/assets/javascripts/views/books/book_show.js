@@ -24,6 +24,15 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     bookView.scrollTop += bookView.clientHeight - 40
   },
 
+  indexElements: function () {
+    $("#book-container").children().each(function (idx, el) {
+      $(el).wrap("<div class='row'></div>");
+      $(el).before("<div class='col-xs-1'></div>");
+      $(el).wrap("<div class='col-xs-11'></div>");
+      $(el).parent().data("location", idx);
+    });
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
@@ -32,6 +41,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   },
 
   onRender: function () {
-    $("#book-container").load(this.model.get('url'));
+    var view = this;
+    $("#book-container").load(view.model.get('url'), view.indexElements);
   }
 });
