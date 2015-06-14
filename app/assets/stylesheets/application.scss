@@ -48,6 +48,11 @@ aside#sidebar {
   overflow-y: scroll;
 }
 
+div#content {
+  padding-top: 10px;
+  padding-right: 2pc;
+}
+
 div#new-list-books-container {
   border: 1px solid #ccc;
   height: 200px;
@@ -115,4 +120,10 @@ p.list-title {
 
 .login-options {
   text-align: center;
+}
+
+.v-centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

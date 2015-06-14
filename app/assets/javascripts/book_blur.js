@@ -27,6 +27,11 @@ window.BookBlur = {
     $('#sidebar').html(sidebar.$el);
     sidebar.render();
 
+    var footer = new BookBlur.Views.FooterView();
+
+    $('#footer-bar').html(footer.$el);
+    footer.render();
+
     Backbone.history.start();
   }
 };

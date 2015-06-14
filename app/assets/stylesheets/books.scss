@@ -4,5 +4,20 @@
 #book-container {
   max-height: 85vh;
   overflow-y: hidden;
-  margin-top: 15px;
+  padding: 10px 25px 0 25px;
+}
+
+footer#book-info {
+  position: absolute;
+  bottom: 0;
+  left: 16%;
+  right: 0;
+  min-height: 5vh;
+}
+
+div.page-buttons {
+  bottom: 0;
+  opacity: 0.5;
+  height: 85vh;
+  border: none;
 }
