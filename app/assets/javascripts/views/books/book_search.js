@@ -5,6 +5,15 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
     "keyup input": "getResults"
   },
 
+  initialize: function (options) {
+    if (options.resultAddable === undefined) {
+      this.resultAddable = false;
+    } else {
+      debugger
+      this.resultAddable = options.resultAddable;
+    }
+  },
+
   getResults: function (event) {
     if (event.keyCode !== 16) {
       var view = this;
@@ -26,7 +35,8 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
 
   addResult: function (book) {
     var subview = new BookBlur.Views.BookSearchResult({
-      model: book
+      model: book,
+      addable: this.resultAddable
     });
     this.addSubview('.search-results', subview);
   },

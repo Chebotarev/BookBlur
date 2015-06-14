@@ -14,7 +14,9 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
     this.books = options.books;
 
     this.book_ids = [];
-    this.addSubview('#new-form-search', new BookBlur.Views.BookSearch());
+    this.addSubview('#new-form-search', new BookBlur.Views.BookSearch({
+      resultAddable: true
+    }));
   },
 
   addBook: function (event) {

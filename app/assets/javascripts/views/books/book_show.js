@@ -7,11 +7,28 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   events: {
     "click #prev-page": "prevPage",
-    "click #next-page": "nextPage"
+    "click #next-page": "nextPage",
+    "click .book-row": "addBookmark"
   },
 
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
+  },
+
+  addBookmark: function (event) {
+    var $target = $(event.currentTarget);
+    $target.children().
+      first().
+      append("<div class='v-centered glyphicon glyphicon-bookmark'></div>");
+  },
+
+  indexElements: function () {
+    $("#book-container").children().each(function (idx, el) {
+      $(el).wrap("<div class='row book-row'></div>");
+      $(el).before("<div class='col-xs-1 bookmark-col'></div>");
+      $(el).wrap("<div class='col-xs-11 book-col'></div>");
+      $(el).parent().parent().data("location", idx);
+    });
   },
 
   prevPage: function () {
@@ -23,16 +40,6 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     var bookView = $("#book-container")[0]
     bookView.scrollTop += bookView.clientHeight - 40
   },
-
-  indexElements: function () {
-    $("#book-container").children().each(function (idx, el) {
-      $(el).wrap("<div class='row'></div>");
-      $(el).before("<div class='col-xs-1'></div>");
-      $(el).wrap("<div class='col-xs-11'></div>");
-      $(el).parent().data("location", idx);
-    });
-  },
-
   render: function () {
     var content = this.template();
     this.$el.html(content);

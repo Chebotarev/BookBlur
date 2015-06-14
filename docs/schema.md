@@ -42,7 +42,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 book_id     | integer   | not null, foreign key (references books)
-paragraph   | integer   | not null
+location    | integer   | not null
 body        | text      |
 
 
