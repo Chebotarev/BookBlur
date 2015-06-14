@@ -9,8 +9,13 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
     if (options.resultAddable === undefined) {
       this.resultAddable = false;
     } else {
-      debugger
       this.resultAddable = options.resultAddable;
+    }
+
+    if (options.resultLinked === undefined) {
+      this.resultLinked = false;
+    } else {
+      this.resultLinked = options.resultLinked;
     }
   },
 
@@ -36,7 +41,8 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
   addResult: function (book) {
     var subview = new BookBlur.Views.BookSearchResult({
       model: book,
-      addable: this.resultAddable
+      addable: this.resultAddable,
+      linked: this.resultLinked
     });
     this.addSubview('.search-results', subview);
   },

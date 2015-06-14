@@ -7,6 +7,10 @@ BookBlur.Views.BookSearchResult = Backbone.View.extend({
 
   initialize: function (options) {
     this.addable = options.addable;
+
+    if (options.linked) {
+      this.$el.attr("href", "#book/" + this.model.id);
+    }
   },
 
   render: function () {
