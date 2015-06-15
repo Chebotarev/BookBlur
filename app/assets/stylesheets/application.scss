@@ -26,6 +26,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+$nav-height: 50px;
+
 .col-centered{
     float: none;
     margin: 0 auto;
@@ -36,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main.full-height {
-  height: calc(100vh - 50px);
+  height: calc(100vh - $nav-height);
 }
 
 aside#sidebar {
@@ -66,15 +68,11 @@ div#new-list-books-container {
   min-height: 80vh;
 }
 
-.expand-list {
-  position: absolute;
-  right: 3px;
-  top: 9px;}
 
 .collapse-list {
   position: absolute;
   right: 3px;
-  top: 9px;}
+  bottom: 9px;}
 
 .remove-book {
   position: absolute;
@@ -99,8 +97,21 @@ p.list-title {
   margin-right: 18px;
 }
 
-.panel-heading {
+.list-header {
   position: relative;
+  min-height: 5pc;
+}
+
+.expand-list {
+  position: absolute;
+  right: 3px;
+  bottom: 9px;
+}
+
+.edit-list {
+  position: absolute;
+  right: 3px;
+  top: 9px;
 }
 
 .book-card:hover {
