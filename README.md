@@ -45,7 +45,7 @@ I will create the view for the book navigation page (the landing page after logi
 [Details][phase-three]
 
 ### Phase 4: Bookmarks and Notes (~ 2 days)
-I will add models for bookmarks into the Backbone app. Bookmarks will be added dynamically with click event handlers on paragraph tags in the book content section. Bookmarks will have a body column that will expand when a bookmark is highlighted. A list of bookmarks for the current book will be displayed in the Book Info section.
+I will add models for bookmarks into the Backbone app. Bookmarks will be added dynamically with click event handlers on HTML tags in the book content section. Bookmarks will have a body column that will expand when a bookmark is highlighted. A list of bookmarks for the current book will be displayed in the Book Info section.
 
 [Details][phase-four]
 
