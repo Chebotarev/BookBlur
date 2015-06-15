@@ -1,4 +1,4 @@
-class Api::BooksController < ApplicationController
+class Api::BooksController < Api::ApiController
   before_action :ensure_logged_in
 
   def index
@@ -20,12 +20,5 @@ class Api::BooksController < ApplicationController
     end
 
     render json: @books
-  end
-
-  private
-
-
-  def ensure_logged_in
-    redirect_to new_session_url unless logged_in?
   end
 end

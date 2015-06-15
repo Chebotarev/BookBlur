@@ -1,4 +1,4 @@
-class Api::ListsController < ApplicationController
+class Api::ListsController < Api::ApiController
   before_action :ensure_logged_in
 
   def index
@@ -21,9 +21,5 @@ class Api::ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:title, :description, book_ids: [])
-  end
-
-  def ensure_logged_in
-    redirect_to new_session_url unless logged_in?
   end
 end
