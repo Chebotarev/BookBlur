@@ -73,7 +73,7 @@ mark1 = Mark.create!(
 )
 
 mark2 = Mark.create!(
-  owner_id: user2.id,
+  owner_id: user1.id,
   book_id: book2.id,
   location: 2
 )

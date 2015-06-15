@@ -40,6 +40,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     var bookView = $("#book-container")[0]
     bookView.scrollTop += bookView.clientHeight - 40
   },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
