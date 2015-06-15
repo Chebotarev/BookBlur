@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :marks,
+    class_name: "Mark",
+    foreign_key: :owner_id,
+    primary_key: :id
+  )
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64
   end

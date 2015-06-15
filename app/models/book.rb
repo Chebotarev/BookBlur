@@ -6,4 +6,6 @@ class Book < ActiveRecord::Base
   has_many :listings
 
   has_many :lists
+
+  has_many :marks
 end

@@ -22,10 +22,18 @@ div.page-buttons {
   border: none;
 }
 
-div.book-row {
+div.book-col {
   cursor: pointer;
 }
 
 div.bookmark-col {
   padding-top: 1pc;
+}
+
+span.bookmark {
+  font-size: 2em;
+}
+
+span.bookmark:hover {
+  color: gold;
 }

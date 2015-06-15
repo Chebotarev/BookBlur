@@ -8,18 +8,18 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   events: {
     "click #prev-page": "prevPage",
     "click #next-page": "nextPage",
-    "click .book-row": "addBookmark"
+    "click .book-col": "addNewBookmark"
   },
 
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
   },
 
-  addBookmark: function (event) {
-    var $target = $(event.currentTarget);
+  addNewBookmark: function (event) {
+    var $target = $(event.currentTarget).parent();
     $target.children().
       first().
-      append("<div class='glyphicon glyphicon-bookmark'></div>");
+      append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
   },
 
   indexElements: function () {
