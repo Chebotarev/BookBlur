@@ -19,6 +19,6 @@ class Api::MarksController < Api::ApiController
   private
 
   def mark_params
-    params.require(:mark).permit(:body)
+    params.require(:mark).permit(:book_id, :location)
   end
 end

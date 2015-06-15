@@ -17,15 +17,22 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   addNewBookmark: function (event) {
     var $target = $(event.currentTarget).parent();
-    $target.children().
-      first().
-      append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
+    var newMark = new BookBlur.Models.Mark({
+      book_id: parseInt(Backbone.history.fragment.slice(5)),
+      location: $target.data('location')
+    });
+
+    newMark.save({}, {
+      success: function () {
+        this.renderBookmark($target);
+      }.bind(this)
+    });
   },
 
   getBookmarks: function () {
     this.model.marks().each(function (mark) {
       var $target = $(".book-row").eq(mark.attributes.location);
-      $target.children().first().append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
+      this.renderBookmark($target);
     }.bind(this));
   },
 
@@ -48,6 +55,13 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   nextPage: function () {
     var bookView = $("#book-container")[0]
     bookView.scrollTop += bookView.clientHeight - 40
+  },
+
+  renderBookmark: function ($target) {
+    $target.
+      children().
+      first().
+      append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
   },
 
   render: function () {
