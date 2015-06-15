@@ -19,7 +19,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     var $target = $(event.currentTarget);
     $target.children().
       first().
-      append("<div class='v-centered glyphicon glyphicon-bookmark'></div>");
+      append("<div class='glyphicon glyphicon-bookmark'></div>");
   },
 
   indexElements: function () {

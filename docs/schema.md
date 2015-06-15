@@ -36,7 +36,7 @@ list_id     | integer   | not null, foreign key (references lists)
 book_id     | integer   | not null, foreign key (references books)
 
 
-## bookmarks
+## marks
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

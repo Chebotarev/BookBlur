@@ -65,3 +65,29 @@ listing3 = Listing.create!(
   list_id: list2.id,
   book_id: book3.id
 )
+
+mark1 = Mark.create!(
+  owner_id: user1.id,
+  book_id: book1.id,
+  location: 1
+)
+
+mark2 = Mark.create!(
+  owner_id: user2.id,
+  book_id: book2.id,
+  location: 2
+)
+
+mark3 = Mark.create!(
+  owner_id: user1.id,
+  book_id: book1.id,
+  location: 3,
+  body: "Super cool bookmark!"
+)
+
+mark4 = Mark.create!(
+  owner_id: user2.id,
+  book_id: book2.id,
+  location: 4,
+  body: "Not my bookmark"
+)
