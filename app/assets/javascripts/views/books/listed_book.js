@@ -12,6 +12,12 @@ BookBlur.Views.ListedBook = Backbone.View.extend({
   },
 
   initialize: function (options) {
+    if (options.removable === undefined) {
+      this.removable = false;
+    } else {
+      this.removable = options.removable;
+    }
+
     this.listenTo(this.model, "sync add", this.render);
     this.listenTo(Backbone.history, "route", this.markSelected);
 
@@ -35,7 +41,8 @@ BookBlur.Views.ListedBook = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      book: this.model
+      book: this.model,
+      removable: this.removable
     });
     this.$el.html(content);
     return this;

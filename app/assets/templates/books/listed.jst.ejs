@@ -1,2 +1,6 @@
 <b> <%= book.get('title') %></b> <i class="small">by <%= book.get('author') %></i>
-<button class="btn-xs btn-danger remove-book glyphicon glyphicon-remove" data-id="<%= book.id %>"></button>
+<% if (removable) { %>
+  <button class="btn-xs btn-danger remove-book" data-id="<%= book.id %>">
+    <span class="glyphicon glyphicon-remove"></span>
+  </button>
+<% } %>
