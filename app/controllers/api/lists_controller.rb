@@ -11,7 +11,7 @@ class Api::ListsController < Api::ApiController
     @list.owner_id = current_user.id
 
     if @list.save
-      render json: @list
+      render :new
     else
       render json: @list.errors.full_messages, status: :unprocessible_entity
     end

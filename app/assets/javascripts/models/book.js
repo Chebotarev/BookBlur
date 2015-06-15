@@ -3,7 +3,7 @@ BookBlur.Models.Book = Backbone.Model.extend({
 
   marks: function () {
     if (!this._marks) {
-      this._marks = new BookBlur.Collections.Marks([], { book: this });
+      this._marks = new BookBlur.Collections.Marks();
     }
     return this._marks
   },
