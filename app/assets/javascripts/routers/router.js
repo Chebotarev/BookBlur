@@ -9,6 +9,7 @@ BookBlur.Routers.Router = Backbone.Router.extend({
     "": "news",
     "search": "search",
     "list/new": "newList",
+    "list/:id/edit": "editList",
     "book/:id": "show"
   },
 
@@ -26,10 +27,19 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   },
 
   newList: function () {
-    this.books.fetch();
-    var view = new BookBlur.Views.ListNew({
+    var list = new BookBlur.Models.List();
+    var view = new BookBlur.Views.ListForm({
       lists: this.lists,
-      books: this.books
+      list: list
+    });
+    this._swapView(view);
+  },
+
+  editList: function (id) {
+    var list = this.lists.getOrFetch(id);
+    var view = new BookBlur.Views.ListForm({
+      lists: this.lists,
+      list: list
     });
     this._swapView(view);
   },

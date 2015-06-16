@@ -5,7 +5,8 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
 
   events: {
     "click .expand-list": "expand",
-    "click .collapse-list": "collapse"
+    "click .collapse-list": "collapse",
+    "click .edit-list": "edit"
   },
 
   initialize: function () {
@@ -35,13 +36,18 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
 
     $target.addClass("expand-list");
     $target.append("<span class='glyphicon glyphicon-menu-right'></span>");
-
   },
 
   disbaleBtn: function ($button) {
     $button.attr("disabled", "disabled").
       removeClass("btn-info").
       addClass("btn-default");
+  },
+
+  edit: function (event) {
+    Backbone.history.navigate("list/" + this.model.id + "/edit",
+      { trigger: true }
+    );
   },
 
   expand: function () {

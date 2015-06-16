@@ -1,4 +1,4 @@
-BookBlur.Views.ListNew = Backbone.CompositeView.extend({
+BookBlur.Views.ListForm = Backbone.CompositeView.extend({
   template: JST['lists/new'],
 
   className: "container",
@@ -11,7 +11,7 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.lists = options.lists;
-    this.books = options.books;
+    this.list = options.list;
 
     this.book_ids = [];
     this.addSubview('#new-form-search', new BookBlur.Views.BookSearch({
@@ -28,7 +28,6 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
     var subview = new BookBlur.Views.ListedBook({
       model: new BookBlur.Models.Book(book),
       removable: true
-      // collection: this.books
     });
     this.addSubview('#new-list-books', subview);
   },
@@ -38,12 +37,17 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
     var view = this;
     var formData = $(event.currentTarget).serializeJSON();
     formData.list['book_ids'] = view.book_ids;
-    var list = new BookBlur.Models.List(formData);
-    list.save({}, {
+    view.list.set(formData);
+    view.list.save({}, {
       success: function () {
-        view.lists.add(list);
+        view.lists.add(view.list, { merge: true });
+        Backbone.history.navigate("", { trigger: true });
       }
     });
+  },
+
+  getBooks: function () {
+
   },
 
   removeBook: function (event) {
@@ -57,7 +61,9 @@ BookBlur.Views.ListNew = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({
+      list: this.list
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;
