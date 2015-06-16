@@ -20,7 +20,7 @@ class Api::ListsController < Api::ApiController
   def update
     @list = List.find(params[:id])
 
-    if @list.update(post_params)
+    if @list.update(list_params)
       render :new
     else
       render json: @list.errors.full_messages, status: :unprocessible_entity

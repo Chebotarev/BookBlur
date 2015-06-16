@@ -1,10 +1,10 @@
 BookBlur.Views.ListForm = Backbone.CompositeView.extend({
-  template: JST['lists/new'],
+  template: JST['lists/form'],
 
   className: "container",
 
   events: {
-    "submit #new-list-form": "createList",
+    "submit #list-form": "createList",
     "submit .add-book": "addBook",
     "click .remove-book": "removeBook"
   },
@@ -12,11 +12,14 @@ BookBlur.Views.ListForm = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.lists = options.lists;
     this.list = options.list;
-
     this.book_ids = [];
+
     this.addSubview('#new-form-search', new BookBlur.Views.BookSearch({
       resultAddable: true
     }));
+
+    this.listenTo(this.list, "sync", this.render);
+    this.listenTo(this.list, "sync", this.getBooks);
   },
 
   addBook: function (event) {
@@ -29,7 +32,7 @@ BookBlur.Views.ListForm = Backbone.CompositeView.extend({
       model: new BookBlur.Models.Book(book),
       removable: true
     });
-    this.addSubview('#new-list-books', subview);
+    this.addSubview('#list-form-books', subview);
   },
 
   createList: function (event) {
@@ -46,8 +49,16 @@ BookBlur.Views.ListForm = Backbone.CompositeView.extend({
     });
   },
 
-  getBooks: function () {
-
+  getBooks: function (model) {
+    var view = this;
+    model.books().each(function (book) {
+      view.book_ids.push(book.id);
+      var subview = new BookBlur.Views.ListedBook({
+        model: book,
+        removable: true
+      });
+      view.addSubview('#list-form-books', subview);
+    });
   },
 
   removeBook: function (event) {

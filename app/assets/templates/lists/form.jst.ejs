@@ -2,11 +2,11 @@
   <article class="col-xs-6">
     <h3><%= list.isNew() ? 'New List' : 'Edit List' %></h3>
 
-    <form id="new-list-form">
+    <form id="list-form">
       <div class="form-group">
-        <label for="new-list-title">Title</label><br>
+        <label for="list-form-title">Title</label><br>
         <input
-          id="new-list-title"
+          id="list-form-title"
           class="form-control"
           type="text"
           name="list[title]"
@@ -15,9 +15,9 @@
       </div>
 
       <div class="form-group">
-        <label for="new-list-description">Description</label><br>
+        <label for="list-form-description">Description</label><br>
         <textarea
-          id="new-list-description"
+          id="list-form-description"
           class="form-control"
           name="list[description]"
           rows="5"
@@ -25,9 +25,9 @@
       </div>
 
       <div class="form-group">
-        <label for="new-list-books">Books:</label>
-        <div id="new-list-books-container" class="form-control">
-          <ul id="new-list-books" class="list-group"></ul>
+        <label for="list-form-books">Books:</label>
+        <div id="list-form-books-container" class="form-control">
+          <ul id="list-form-books" class="list-group"></ul>
         </div>
       </div>
 

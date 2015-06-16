@@ -1,4 +1,4 @@
-json.extract! @list, :title, :description
+json.extract! @list, :id, :title, :description
 json.books do
   json.array!(@list.books) do |book|
     json.id book.id

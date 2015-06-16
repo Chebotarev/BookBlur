@@ -45,7 +45,8 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
   },
 
   edit: function (event) {
-    Backbone.history.navigate("list/" + this.model.id + "/edit",
+    Backbone.history.navigate(
+      "list/" + this.model.id + "/edit",
       { trigger: true }
     );
   },
