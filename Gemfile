@@ -37,6 +37,10 @@ gem 'newrelic_rpm'
 
 gem 'rails_12factor'
 
+gem "figaro"
+
+gem 'cloudinary'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
