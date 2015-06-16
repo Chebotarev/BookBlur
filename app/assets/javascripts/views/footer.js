@@ -1,7 +1,7 @@
 BookBlur.Views.FooterView = Backbone.View.extend({
   template: JST['footer'],
 
-  className: "centered-btns",
+  className: "container-fluid",
 
   render: function () {
     var content = this.template();
