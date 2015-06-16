@@ -62,9 +62,27 @@ footer#footer-bar {
   background-color: #ECECEC;
 }
 
+div#inner-footer {
+  margin-left: 18.66666666667%;
+  padding: 0 30%;
+}
+
 button#expand-social {
   width: 30%;
   margin: 0 30% 0 30%;
+}
+
+button#collapse-social {
+  width: 30%;
+  margin: 0 30% 0 30%;
+}
+
+div.social-container {
+  position: absolute;
+  top: -2.4pc;
+  right: 0;
+  left: 16.66666666667%;
+  background-color: #ccc;
 }
 
 div#list-form-books-container {
