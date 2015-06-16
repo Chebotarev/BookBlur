@@ -2,8 +2,8 @@ BookBlur.Views.MarkModal = Backbone.View.extend({
   template: JST['marks/modal'],
 
   events: {
-    "click .m-backdrop": "remove",
-    "click button.close": "remove",
+    "click .m-backdrop": "removeFade",
+    "click button.close": "removeFade",
     "submit form.mark-form": "handleSubmit"
   },
 
@@ -14,9 +14,17 @@ BookBlur.Views.MarkModal = Backbone.View.extend({
     view.model.set(formData);
     view.model.save({}, {
       success: function () {
-        view.remove();
+        view.removeFade();
       }
     })
+  },
+
+  removeFade: function () {
+    this.$el.animate({
+      opacity: 0.25
+    }, 200, function() {
+      this.remove();
+    });
   },
 
   render: function () {
