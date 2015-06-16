@@ -18,10 +18,6 @@ span.page-icons {
   font-size: 2em;
 }
 
-div.book-col {
-  cursor: pointer;
-}
-
 div.bookmark-col {
   padding-top: 1pc;
 }
@@ -32,4 +28,12 @@ span.bookmark {
 
 span.bookmark:hover {
   color: gold;
+}
+
+button.grey {
+  background-color: grey;
+}
+
+button#toggle-bookmark {
+  margin-top: 9px;
 }

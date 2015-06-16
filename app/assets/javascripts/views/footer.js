@@ -3,6 +3,14 @@ BookBlur.Views.FooterView = Backbone.View.extend({
 
   className: "container",
 
+  events: {
+    "click button#expand-social": "expandSocial"
+  },
+
+  expandSocial: function () {
+    debugger
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);

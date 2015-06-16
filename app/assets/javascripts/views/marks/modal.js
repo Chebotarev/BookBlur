@@ -21,7 +21,7 @@ BookBlur.Views.MarkModal = Backbone.View.extend({
 
   removeFade: function () {
     this.$el.animate({
-      opacity: 0.25
+      opacity: 0
     }, 200, function() {
       this.remove();
     });
