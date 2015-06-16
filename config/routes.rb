@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get 'books/search', to: "books#search"
     resources :books, only: [:index, :show]
     resources :lists, only: [:index, :create, :show, :update]
-    resources :marks, only: [:index, :create]
+    resources :marks, only: [:index, :create, :update]
   end
 end

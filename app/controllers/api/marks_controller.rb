@@ -16,9 +16,19 @@ class Api::MarksController < Api::ApiController
     end
   end
 
+  def update
+    @mark = Mark.find(params[:id])
+
+    if @mark.update(mark_params)
+      render json: @mark
+    else
+      render json: @mark.errors.full_messages, status: :unprocessible_entity
+    end
+  end
+
   private
 
   def mark_params
-    params.require(:mark).permit(:book_id, :location)
+    params.require(:mark).permit(:book_id, :location, :body)
   end
 end
