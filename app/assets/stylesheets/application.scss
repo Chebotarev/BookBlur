@@ -53,6 +53,20 @@ div#content {
   padding-right: 2pc;
 }
 
+footer#footer-bar {
+  min-height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #ECECEC;
+}
+
+button#expand-social {
+  width: 30%;
+  margin: 0 30% 0 30%;
+}
+
 div#list-form-books-container {
   border: 1px solid #ccc;
   height: 200px;

@@ -60,7 +60,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   showBookmark: function (event) {
     var markId = $(event.currentTarget).data('id');
-    var mark = this.model.marks().get(markId);
+    var mark = this.model.marks().getOrFetch(markId);
     var view = new BookBlur.Views.MarkModal({
       model: mark
     });

@@ -26,9 +26,13 @@ class Api::MarksController < Api::ApiController
     end
   end
 
+  def show
+    @mark = Mark.find(params[:id])
+  end
+
   private
 
   def mark_params
-    params.require(:mark).permit(:book_id, :location, :body)
+    params.require(:mark).permit(:id, :book_id, :location, :body)
   end
 end
