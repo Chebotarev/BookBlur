@@ -8,7 +8,8 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   events: {
     "click #prev-page": "prevPage",
     "click #next-page": "nextPage",
-    "click .book-col": "addNewBookmark"
+    "click .book-col": "addNewBookmark",
+    "click span.bookmark": "showBookmark"
   },
 
   initialize: function (options) {
@@ -24,7 +25,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
     newMark.save({}, {
       success: function () {
-        this.renderBookmark($target);
+        this.renderBookmark($target, newMark.id);
       }.bind(this)
     });
   },
@@ -32,7 +33,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   getBookmarks: function () {
     this.model.marks().each(function (mark) {
       var $target = $(".book-row").eq(mark.attributes.location);
-      this.renderBookmark($target);
+      this.renderBookmark($target, mark.id);
     }.bind(this));
   },
 
@@ -49,7 +50,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   prevPage: function () {
     var bookView = $("#book-container")[0]
-    bookView.scrollTop -= bookView.clientHeight + 40
+    bookView.scrollTop -= bookView.clientHeight - 40
   },
 
   nextPage: function () {
@@ -57,11 +58,17 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     bookView.scrollTop += bookView.clientHeight - 40
   },
 
-  renderBookmark: function ($target) {
+  showBookmark: function (event) {
+    var markId = $(event.currentTarget).data('id');
+    debugger
+  },
+
+  renderBookmark: function ($target, id) {
     $target.
       children().
       first().
       append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
+    $target.find('span.bookmark').data("id", id);
   },
 
   render: function () {
