@@ -136,3 +136,28 @@ p.list-title {
   top: 50%;
   transform: translateY(-50%);
 }
+
+div.m-backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1031;
+}
+
+div.m-content {
+  background-color: white;
+  position: absolute;
+  padding: 10px 20px;
+  top: 25%;
+  bottom: 0;
+  left: 25%;
+  z-index: 1032;
+  height: 50%;
+  width: 50%;
+  border-radius: 5px;
+}

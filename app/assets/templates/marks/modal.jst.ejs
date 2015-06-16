@@ -1,0 +1,31 @@
+<div class="m-backdrop"></div>
+
+<div class="m-content">
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <form class="mark-form">
+    <div class="form-group">
+      <h4>Note</h4>
+      <textarea
+        id="body-field"
+        name="mark[body]"
+        class="form-control"
+        rows="5"
+        cols="30"
+      ><%= mark.escape('body') %></textarea>
+      <br>
+
+      <input
+        type="submit"
+        class="btn btn-primary pull save-mark"
+        value="Save"
+      >
+    </div>
+  </form>
+</div>
