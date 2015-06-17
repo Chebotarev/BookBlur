@@ -1,7 +1,9 @@
 <h4><%= book.escape('title') %></h4>
 <h5>Your Bookmarks <small>Count: <%= marks.length %></small></h5>
 <div class="list-group">
-  <% marks.forEach(function (mark) { %>
-    <a href="#" class="list-group-item "><%= mark.escape('location') %></a>
+  <% marks.forEach(function (mark, idx) { %>
+    <a href="#" data-location="<%= mark.escape('location') %>" class="list-group-item bookmark-link">Location: <%= mark.escape('location') %>
+      <br><small><i><%= mark.escape('body') %></i></small>
+    </a>
   <% }); %>
 </ul>

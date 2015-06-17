@@ -4,9 +4,24 @@ BookBlur.Views.MarksIndex = Backbone.View.extend({
 
   className: "col-xs-6 tabbed-content",
 
+  events: {
+    "click a.bookmark-link": "scrollMark"
+  },
+
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model.marks(), "add", this.render);
+  },
+
+  scrollMark: function (event) {
+    event.preventDefault();
+    var location = $(event.currentTarget).data('location');
+    var $target = $('div.book-row').eq(location);
+    
+    $target.animatescroll({
+      element: 'div#book-container',
+      scrollSpeed: 2000,
+      easing:'easeInOutQuint'
+    });
   },
 
   render: function () {
