@@ -3,22 +3,16 @@ BookBlur.Views.Social = Backbone.CompositeView.extend({
 
   className: "social-container",
 
-  events: {
-    "click a#bookmarks-social-tab": "showMarks",
-    "click a#comments-social-tab": "showComments"
-  },
-
   initialize: function (options) {
     this.router = options.router;
+
+    this.listenTo(this.router, "route", this.handleRoute);
   },
 
-  showMarks: function (event) {
-    event.preventDefault();
-    
-  },
-
-  showComments: function (event) {
-    event.preventDefault();
+  handleRoute: function (route, params) {
+    if (route === "show") {
+      
+    }
   },
 
   render: function () {

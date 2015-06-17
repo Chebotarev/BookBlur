@@ -1,2 +1,0 @@
-(function() { this.JST || (this.JST = {}); this.JST["footer"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<button id="expand-social" class="btn btn-default page-buttons">\n  <span class="glyphicon glyphicon-menu-up"></span>\n</button>\n\n<button id="toggle-bookmark" class="btn btn-default">\n  <span class="glyphicon glyphicon-bookmark">&plus;</span>\n</button>\n');}return __p.join('');};
-}).call(this);
