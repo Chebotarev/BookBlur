@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.col-centered{
+div.col-centered{
     float: none;
     margin: 0 auto;
 }
@@ -111,7 +111,7 @@ div#list-form-books-container {
   overflow-y: scroll;
 }
 
-#new-form-search {
+aside#new-form-search {
   padding-left: 20px;
   margin-top: 55px;
   border-left: 1px solid #ccc;
@@ -119,18 +119,19 @@ div#list-form-books-container {
 }
 
 
-.collapse-list {
+button.collapse-list {
   position: absolute;
   right: 3px;
   bottom: 9px;}
 
-.remove-book {
+button.remove-book {
   position: absolute;
   right: 3px;
   top: 3px;
+  margin-top: 5px;
 }
 
-.add-book-btn {
+button.add-book-btn {
   margin-right: 20px;
 }
 
@@ -209,7 +210,7 @@ div.m-content {
   bottom: 0;
   left: 25%;
   z-index: 1032;
-  height: 245px;
+  height: 260px;
   width: 50%;
   border-radius: 5px;
 }
