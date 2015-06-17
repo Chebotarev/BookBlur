@@ -104,7 +104,11 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   onRender: function () {
     var view = this;
+
+    // setTimeout to see CSS Spinner
+    setTimeout(function () {
     $("#book-container").load(view.model.get('url'),
       view.indexElements.bind(view));
+    }, 2000);
   }
 });
