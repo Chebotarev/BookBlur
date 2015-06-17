@@ -10,6 +10,7 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.books(), "sync", this.render);
   },
 
@@ -45,6 +46,7 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
   },
 
   edit: function (event) {
+    this.collapse();
     Backbone.history.navigate(
       "list/" + this.model.id + "/edit",
       { trigger: true }

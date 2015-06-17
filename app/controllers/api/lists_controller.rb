@@ -20,6 +20,10 @@ class Api::ListsController < Api::ApiController
   def update
     @list = List.find(params[:id])
 
+    if params[:list][:book_ids] == nil
+      params[:list][:book_ids] = []
+    end
+
     if @list.update(list_params)
       render :new
     else
@@ -34,6 +38,6 @@ class Api::ListsController < Api::ApiController
   private
 
   def list_params
-    params.require(:list).permit(:title, :description, book_ids: [])
+    params.require(:list).permit(:id, :title, :description, book_ids: [])
   end
 end
