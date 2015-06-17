@@ -12,6 +12,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.router = options.router;
+    this.books = options.books;
   },
 
   collapseSocial: function (event) {
@@ -41,16 +42,20 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
+    this.onRender();
+    return this;
+  },
 
+  onRender: function () {
     var view = new BookBlur.Views.Social({
-      router: this.router
+      router: this.router,
+      books: this.books
     });
+
     $("footer#footer-bar").append(view.$el);
     view.$el.addClass("hidden");
     view.render();
 
     this.socialView = view;
-
-    return this;
   }
 });

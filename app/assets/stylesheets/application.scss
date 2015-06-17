@@ -96,6 +96,11 @@ a#comments-social-tab {
   border-bottom: none;
 }
 
+div.tabbed-content {
+  overflow: scroll;
+  height: 12pc;
+}
+
 div#list-form-books-container {
   border: 1px solid #ccc;
   height: 200px;

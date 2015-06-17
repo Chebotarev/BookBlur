@@ -28,7 +28,8 @@ window.BookBlur = {
     sidebar.render();
 
     var footer = new BookBlur.Views.FooterView({
-      router: router
+      router: router,
+      books: BookBlur.Collections.books
     });
 
     $('#footer-bar').html(footer.$el);

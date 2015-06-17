@@ -16,7 +16,6 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     $("#toggle-bookmark").on("click", this.toggleMark.bind(this));
 
     this.listenTo(this.model, "sync", this.render);
-
   },
 
   addNewBookmark: function (event) {
