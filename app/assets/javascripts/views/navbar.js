@@ -2,6 +2,8 @@ BookBlur.Views.NavView = Backbone.CompositeView.extend({
 
   template: JST['navbar'],
 
+  className: "container-fluid",
+
   events: {
     "click #logout": "logout"
   },
