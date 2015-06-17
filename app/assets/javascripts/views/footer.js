@@ -10,6 +10,9 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     "click button#collapse-social": "collapseSocial"
   },
 
+  initialize: function () {
+  },
+
   collapseSocial: function (event) {
     $btn = $(event.currentTarget)
     $btn.removeAttr('id');
@@ -19,7 +22,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-down").
       addClass("glyphicon-menu-up");
 
-    this.socialView.remove();
+    this.socialView.$el.addClass("hidden");
   },
 
   expandSocial: function (event) {
@@ -31,16 +34,20 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-up").
       addClass("glyphicon-menu-down");
 
-    var view = new BookBlur.Views.Social();
-    $("footer#footer-bar").append(view.$el);
-    view.render();
-    this.socialView = view;
+    this.socialView.$el.removeClass("hidden");
   },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.attachSubviews();
+
+    var view = new BookBlur.Views.Social();
+    $("footer#footer-bar").append(view.$el);
+    view.$el.addClass("hidden");
+    view.render();
+
+    this.socialView = view;
+
     return this;
   }
 });
