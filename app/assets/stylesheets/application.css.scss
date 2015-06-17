@@ -148,29 +148,29 @@ p.list-title {
   margin-right: 18px;
 }
 
-.list-header {
+div.list-header {
   position: relative;
   min-height: 5pc;
 }
 
-.expand-list {
+button.expand-list {
   position: absolute;
   right: 3px;
   bottom: 9px;
 }
 
-.edit-list {
+button.edit-list {
   position: absolute;
   right: 3px;
   top: 9px;
 }
 
-.book-card:hover {
+li.book-card:hover {
   cursor: pointer;
   background-color: rgb(186, 186, 186);
 }
 
-.selected {
+li.selected {
   cursor: default;
   background-color: rgb(186, 186, 186);
 }

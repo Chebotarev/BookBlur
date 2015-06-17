@@ -13,19 +13,19 @@ user2 = User.create!(
 book1 = Book.create!(
   title: "A Christmas Carol",
   author: "Charles Dickens",
-  url: "http://localhost:3000/book_source/A_Christmas_Carol.html"
+  url: "https://res.cloudinary.com/bookblur/raw/upload/A_Christmas_Carol_rprf1h.html"
 )
 
 book2 = Book.create!(
   title: "Metamorphosis",
   author: "Franz Kafka",
-  url: "http://localhost:3000/book_source/Metamorphosis.html"
+  url: "https://res.cloudinary.com/bookblur/raw/upload/Metamorphosis_ygmmry.html"
 )
 
 book3 = Book.create!(
   title: "The Call of the Wild",
   author: "Jack London",
-  url: "http://localhost:3000/book_source/The_Call_of_the_Wild.html"
+  url: "https://res.cloudinary.com/bookblur/raw/upload/The_Call_of_the_Wild_okmo7q.html"
 )
 
 list1 = List.create!(
