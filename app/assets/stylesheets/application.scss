@@ -82,7 +82,16 @@ div.social-container {
   top: -2.4pc;
   right: 0;
   left: 16.66666666667%;
-  background-color: #ccc;
+}
+
+a#bookmarks-social-tab {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+a#comments-social-tab {
+  border: 1px solid #ccc;
+  border-bottom: none;
 }
 
 div#list-form-books-container {

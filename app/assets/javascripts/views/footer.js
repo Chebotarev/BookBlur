@@ -10,9 +10,6 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     "click button#collapse-social": "collapseSocial"
   },
 
-  initialize: function () {
-  },
-
   collapseSocial: function (event) {
     $btn = $(event.currentTarget)
     $btn.removeAttr('id');
