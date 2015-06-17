@@ -1,0 +1,2 @@
+(function() { this.JST || (this.JST = {}); this.JST["books/listed"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<b> ',  book.get('title') ,'</b> <i class="small">by ',  book.get('author') ,'</i>\n');  if (removable) { ; __p.push('\n  <button class="btn-xs btn-danger remove-book" data-id="',  book.id ,'">\n    <span class="glyphicon glyphicon-remove"></span>\n  </button>\n');  } ; __p.push('\n');}return __p.join('');};
+}).call(this);

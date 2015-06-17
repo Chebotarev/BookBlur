@@ -1,4 +1,42 @@
-<ul class="nav nav-pills nav-justified">
-  <li role="presentation"><a id="bookmarks-social-tab" href="#">Bookmarks</a></li>
-  <li role="presentation"><a id="comments-social-tab" href="#">Comments</a></li>
+<ul id="social-tabs" class="nav nav-tabs" role="tablist">
+
+  <li role="presentation" class="active">
+    <a
+      href="#marks"
+      id="marks-tab"
+      role="tab"
+      data-toggle="tab"
+      aria-controls="marks"
+      aria-expanded="true"
+    >Bookmarks</a>
+  </li>
+
+  <li role="presentation">
+    <a
+      href="#comments"
+      role="tab"
+      id="comments-tab"
+      data-toggle="tab"
+      aria-controls="comments"
+    >Comments</a>
+  </li>
+
 </ul>
+
+<div id="social-tab-content" class="tab-content">
+
+  <div
+    role="tabpanel"
+    class="tab-pane fade in active"
+    id="marks-tab-content"
+    aria-labelledby="marks-tab"
+  ></div>
+
+  <div
+    role="tabpanel"
+    class="tab-pane fade"
+    id="comments-tab-content"
+    aria-labelledby="comments-tab"
+  ></div>
+
+</div>

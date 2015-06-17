@@ -1,0 +1,2 @@
+(function() { this.JST || (this.JST = {}); this.JST["books/search"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<label for="search-field"><span class="glyphicon glyphicon-search"></span></label>\n<input\n  id="search-field"\n  class="form-control"\n  type="text"\n  name="search"\n  placeholder="Search by title"\n>\n\n<div class="list-group search-results"></div>\n');}return __p.join('');};
+}).call(this);
