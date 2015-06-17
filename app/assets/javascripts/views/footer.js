@@ -13,10 +13,12 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.router = options.router;
     this.books = options.books;
+
+    this.listenTo(this.router, "route", this.handleRoute);
   },
 
-  collapseSocial: function (event) {
-    $btn = $(event.currentTarget)
+  collapseSocial: function (event, btn) {
+    $btn = $(event.currentTarget) || btn;
     $btn.removeAttr('id');
     $btn.attr('id', 'expand-social');
 
@@ -37,6 +39,17 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       addClass("glyphicon-menu-down");
 
     this.socialView.$el.removeClass("hidden");
+  },
+
+  handleRoute: function (route, params) {
+    if (route !== "show") {
+      if (!this.socialView.$el.hasClass("hidden")) {
+        $("button#collapse-social").click();
+      }
+      this.$("button.toggle-view").attr("disabled", "disabled");
+    } else {
+      this.$("button.toggle-view").removeAttr("disabled");
+    }
   },
 
   render: function () {
