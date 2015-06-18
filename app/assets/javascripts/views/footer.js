@@ -5,6 +5,8 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     "id": "inner-footer"
   },
 
+  className: "row",
+
   events: {
     "click button#expand-social": "expandSocial",
     "click button#collapse-social": "collapseSocial"
