@@ -1,10 +1,12 @@
 p.list-desc {
   font-size: smaller;
+  word-wrap: break-word;
 }
 
 p.list-title {
   font-weight: 500;
   margin-right: 18px;
+  word-wrap: break-word;
 }
 
 div.list-header {

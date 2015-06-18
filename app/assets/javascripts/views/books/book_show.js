@@ -77,10 +77,12 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
     if (this.bookmarking) {
       $toggleBtn.removeClass('grey');
+      $toggleBtn.blur();
       $(".book-col").css('cursor','default').off("click");
       this.bookmarking = false;
     } else {
       $toggleBtn.addClass('grey');
+      $toggleBtn.blur();
       $(".book-col").css('cursor','pointer').on("click", this.addNewBookmark.bind(this));
       this.bookmarking = true;
     }

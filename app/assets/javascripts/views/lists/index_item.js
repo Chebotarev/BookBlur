@@ -30,7 +30,6 @@ BookBlur.Views.ListsIndexItem = Backbone.CompositeView.extend({
   },
 
   collapse: function () {
-    debugger
     this.removeAllBooks();
     var $target = this.$('.collapse-list');
     $target.removeClass("collapse-list");
