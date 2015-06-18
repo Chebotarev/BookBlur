@@ -1,0 +1,41 @@
+p.list-desc {
+  font-size: smaller;
+}
+
+p.list-title {
+  font-weight: 500;
+  margin-right: 18px;
+}
+
+div.list-header {
+  position: relative;
+  min-height: 5pc;
+}
+
+button.expand-list {
+  position: absolute;
+  right: 3px;
+  bottom: 9px;
+}
+
+button.collapse-list {
+  position: absolute;
+  right: 3px;
+  bottom: 9px;
+}
+
+button.edit-list {
+  position: absolute;
+  right: 3px;
+  top: 9px;
+}
+
+li.book-card:hover {
+  cursor: pointer;
+  background-color: rgb(186, 186, 186);
+}
+
+li.selected {
+  cursor: default;
+  background-color: rgb(186, 186, 186);
+}

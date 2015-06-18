@@ -1,0 +1,28 @@
+div#list-form-books-container {
+  border: 1px solid #ccc;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+aside#new-form-search {
+  padding-left: 20px;
+  margin-top: 55px;
+  border-left: 1px solid #ccc;
+  min-height: 80vh;
+}
+
+.navbar-search div.search-results {
+  position: absolute;
+  z-index: 2;
+}
+
+button.remove-book {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  margin-top: 5px;
+}
+
+button.add-book-btn {
+  margin-right: 20px;
+}

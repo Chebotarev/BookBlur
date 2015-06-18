@@ -1,6 +1,3 @@
-// Place all the styles related to the Books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #book-container {
   max-height: 85vh;
   overflow-y: hidden;
@@ -32,9 +29,4 @@ span.bookmark:hover {
 
 button.grey {
   background-color: grey;
-}
-
-button#toggle-bookmark {
-  position: absolute;
-  margin-top: 9px;
 }

@@ -27,8 +27,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 div.col-centered{
-    float: none;
-    margin: 0 auto;
+  float: none;
+  margin: 0 auto;
 }
 
 .text-white {
@@ -53,131 +53,8 @@ div#content {
   padding-right: 2pc;
 }
 
-footer#footer-bar {
-  min-height: 50px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #F8F8F8;
-}
-
-div#inner-footer {
-  margin-left: 18.66666666667%;
-  padding: 0 30%;
-}
-
-button#expand-social {
-  width: 30%;
-  margin: 0 30% 0 30%;
-}
-
-button#collapse-social {
-  width: 30%;
-  margin: 0 30% 0 30%;
-}
-
-div.social-container {
-  position: absolute;
-  top: -15.6pc;
-  right: 0;
-  left: 16.66666666667%;
-  height: 500%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #E5E4E4;
-}
-
-a#bookmarks-social-tab {
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-a#comments-social-tab {
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-div.tabbed-content {
-  overflow: scroll;
-  height: 12pc;
-}
-
-div#list-form-books-container {
-  border: 1px solid #ccc;
-  height: 200px;
-  overflow-y: scroll;
-}
-
-aside#new-form-search {
-  padding-left: 20px;
-  margin-top: 55px;
-  border-left: 1px solid #ccc;
-  min-height: 80vh;
-}
-
-
-button.collapse-list {
-  position: absolute;
-  right: 3px;
-  bottom: 9px;}
-
-button.remove-book {
-  position: absolute;
-  right: 3px;
-  top: 3px;
-  margin-top: 5px;
-}
-
-button.add-book-btn {
-  margin-right: 20px;
-}
-
 nav#nav {
   margin-bottom: 0;
-}
-
-p.list-desc {
-  font-size: smaller;
-}
-
-p.list-title {
-  font-weight: 500;
-  margin-right: 18px;
-}
-
-div.list-header {
-  position: relative;
-  min-height: 5pc;
-}
-
-button.expand-list {
-  position: absolute;
-  right: 3px;
-  bottom: 9px;
-}
-
-button.edit-list {
-  position: absolute;
-  right: 3px;
-  top: 9px;
-}
-
-li.book-card:hover {
-  cursor: pointer;
-  background-color: rgb(186, 186, 186);
-}
-
-li.selected {
-  cursor: default;
-  background-color: rgb(186, 186, 186);
-}
-
-.navbar-search div.search-results {
-  position: absolute;
-  z-index: 2;
 }
 
 .login-options {
@@ -188,37 +65,4 @@ li.selected {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
-
-div.m-backdrop {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1031;
-}
-
-div.m-content {
-  background-color: white;
-  position: absolute;
-  padding: 10px 20px;
-  top: 25%;
-  bottom: 0;
-  left: 25%;
-  z-index: 1032;
-  height: 260px;
-  width: 50%;
-  border-radius: 5px;
-}
-
-button.close {
-  color: black;
-}
-
-button.close:hover {
-  color: lightgrey;
 }
