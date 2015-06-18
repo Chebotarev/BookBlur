@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show]
     resources :lists, only: [:index, :create, :show, :update]
     resources :marks, only: [:index, :create, :show, :update]
-    resources :comments, only: [:create]
+    resources :comments, only: [:index, :create]
   end
 end

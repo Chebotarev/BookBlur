@@ -3,6 +3,7 @@ BookBlur.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.books = options.books;
     this.lists = options.lists;
+    this.comments = options.comments;
   },
 
   routes: {
@@ -22,7 +23,10 @@ BookBlur.Routers.Router = Backbone.Router.extend({
   },
 
   news: function () {
-    var view = new BookBlur.Views.NewsFeed();
+    this.comments.fetch();
+    var view = new BookBlur.Views.NewsFeed({
+      comments: this.comments
+    });
     this._swapView(view);
   },
 

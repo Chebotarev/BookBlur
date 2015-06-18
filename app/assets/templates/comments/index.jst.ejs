@@ -1,0 +1,6 @@
+<h4>All Comments</h4>
+<ul class="list-group">
+  <% comments.forEach(function (comment) { %>
+    <li class="list-group-item"><%= comment.escape('body') %></li>
+  <% }); %>
+</ul>
