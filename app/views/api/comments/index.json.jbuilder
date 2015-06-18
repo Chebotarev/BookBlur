@@ -1,8 +1,8 @@
 json.array!(@comments) do |comment|
   json.extract! comment, :id, :body
 
-  json.created_at comment.created_at
-  
+  json.created_at time_ago_in_words(comment.created_at)
+
   owner = comment.owner
 
   json.owner do

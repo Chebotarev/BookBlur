@@ -12,7 +12,8 @@ BookBlur.Views.NavView = Backbone.CompositeView.extend({
     this.router = options.router;
 
     this.addSubview('.navbar-search', new BookBlur.Views.BookSearch({
-      resultLinked: true
+      resultLinked: true,
+      router: this.router
     }));
   },
 

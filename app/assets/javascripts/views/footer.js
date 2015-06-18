@@ -47,8 +47,12 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
         $("button#collapse-social").click();
       }
       this.$("button.toggle-view").attr("disabled", "disabled");
+      this.$("button#toggle-bookmark").attr("disabled", "disabled");
+      this.$("button#post-comment").attr("disabled", "disabled");
     } else {
       this.$("button.toggle-view").removeAttr("disabled");
+      this.$("button#toggle-bookmark").removeAttr("disabled");
+      this.$("button#post-comment").removeAttr("disabled");
     }
   },
 

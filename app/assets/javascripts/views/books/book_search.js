@@ -6,6 +6,11 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
+    if (options.router) {
+      this.router = options.router;
+      this.listenTo(this.router, "route", this.handleRoute);
+    }
+
     if (options.resultAddable === undefined) {
       this.resultAddable = false;
     } else {
@@ -45,6 +50,14 @@ BookBlur.Views.BookSearch = Backbone.CompositeView.extend({
       linked: this.resultLinked
     });
     this.addSubview('.search-results', subview);
+  },
+
+  handleRoute: function (route, params) {
+    if (route === "show") {
+      var view = this;
+      view.eachSubview(view.removeResult.bind(view));
+      this.$('input#search-field').val("");
+    }
   },
 
   removeResult: function (subview) {

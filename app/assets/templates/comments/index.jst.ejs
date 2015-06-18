@@ -2,10 +2,9 @@
 <ul class="list-group">
   <% comments.forEach(function (comment) { %>
     <li class="list-group-item">
-      <% debugger %>
       <p class="user-name"><%= comment.attributes.owner.username %></p>
       <p class="comment-body"><%= comment.escape('body') %></p>
-      <p><small><%= comment.escape('created_at') %></small></p>
+      <p><small><%= comment.escape('created_at') %> ago</small></p>
     </li>
   <% }); %>
 </ul>
