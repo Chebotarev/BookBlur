@@ -28,7 +28,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-down").
       addClass("glyphicon-menu-up");
 
-    this.socialView.$el.addClass("hidden");
+    this.socialView.$el.hide("slide", { direction: "down" }, 500);
   },
 
   expandSocial: function (event) {
@@ -40,7 +40,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-up").
       addClass("glyphicon-menu-down");
 
-    this.socialView.$el.removeClass("hidden");
+    this.socialView.$el.show("slide", { direction: "down" }, 500);
   },
 
   handleRoute: function (route, params) {
@@ -72,7 +72,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     });
 
     $("footer#footer-bar").append(view.$el);
-    view.$el.addClass("hidden");
+    view.$el.toggle();
     view.render();
 
     this.socialView = view;
