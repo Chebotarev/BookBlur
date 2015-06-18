@@ -20,16 +20,30 @@ button.expand-list {
   bottom: 9px;
 }
 
+button.expand-list:disabled {
+  display: none;
+}
+
 button.collapse-list {
   position: absolute;
   right: 3px;
   bottom: 9px;
 }
 
+button.expand-list:disabled {
+  display: none;
+}
+
 button.edit-list {
   position: absolute;
   right: 3px;
   top: 9px;
+}
+
+div#list-form-books-container {
+  border: 7px solid #ccc;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 li.book-card:hover {

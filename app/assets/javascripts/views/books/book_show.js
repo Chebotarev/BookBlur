@@ -25,10 +25,11 @@ BookBlur.Views.BookShow = Backbone.View.extend({
       location: $target.data('location')
     });
 
+    this.toggleMark();
+
     newMark.save({}, {
       success: function () {
-        this.renderBookmark($target, newMark.id);
-        this.toggleMark();
+        this.renderBookmark($target, newMark.id, false);
       }.bind(this)
     });
   },
@@ -36,16 +37,21 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   getBookmarks: function () {
     this.model.marks().each(function (mark) {
       var $target = $(".book-row").eq(mark.attributes.location);
-      this.renderBookmark($target, mark.id);
+      var hasNote = true;
+      if (mark.escape('body') !== "" && mark.escape('body') !== undefined) {
+        hasNote = false;
+      }
+      this.renderBookmark($target, mark.id, hasNote);
     }.bind(this));
   },
 
   indexElements: function () {
     $("#book-container").children().each(function (idx, el) {
-      $(el).wrap("<div class='row book-row'></div>");
-      $(el).before("<div class='col-xs-1 bookmark-col'></div>");
-      $(el).wrap("<div class='col-xs-11 book-col'></div>");
-      $(el).parent().parent().data("location", idx);
+      var $el = $(el);
+      $el.wrap("<div class='row book-row'></div>");
+      $el.before("<div class='col-xs-1 bookmark-col'></div>");
+      $el.wrap("<div class='col-xs-11 book-col'></div>");
+      $el.parent().parent().data("location", idx);
     });
 
     this.getBookmarks();
@@ -88,12 +94,12 @@ BookBlur.Views.BookShow = Backbone.View.extend({
     }
   },
 
-  renderBookmark: function ($target, id) {
-    $target.
-      children().
-      first().
-      append("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
-    $target.find('span.bookmark').data("id", id);
+  renderBookmark: function ($targetParent, id, hasNote) {
+    var $target = $targetParent.children().first();
+    var $bookmark = $("<span class='glyphicon glyphicon-bookmark bookmark'></span>");
+    $bookmark.data("id", id);
+
+    $target.append($bookmark);
   },
 
   render: function () {
