@@ -91,3 +91,30 @@ mark4 = Mark.create!(
   location: 4,
   body: "Not my bookmark"
 )
+
+comment1 = Comment.create!(
+  owner_id: user2.id,
+  book_id: book1.id,
+  body: "A Christmas Carol is a great book!"
+)
+
+
+comment2 = Comment.create!(
+  owner_id: user1.id,
+  book_id: book2.id,
+  body: "Metamorphosis is also super cool!"
+)
+
+
+comment3 = Comment.create!(
+  owner_id: user1.id,
+  book_id: book2.id,
+  body: "Second comment on Metamorphosis"
+)
+
+
+comment4 = Comment.create!(
+  owner_id: user1.id,
+  book_id: book2.id,
+  body: "Not my comment"
+)
