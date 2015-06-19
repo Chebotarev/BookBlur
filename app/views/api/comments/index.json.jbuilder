@@ -9,4 +9,6 @@ json.array!(@comments) do |comment|
     json.id owner.id
     json.username owner.username
   end
+
+  json.book comment.book
 end

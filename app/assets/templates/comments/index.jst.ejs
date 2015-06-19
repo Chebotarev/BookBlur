@@ -1,10 +1,2 @@
 <h4>All Comments</h4>
-<ul class="list-group">
-  <% comments.forEach(function (comment) { %>
-    <li class="list-group-item">
-      <p class="user-name"><%= comment.attributes.owner.username %></p>
-      <p class="comment-body"><%= comment.escape('body') %></p>
-      <p><small><%= comment.escape('created_at') %> ago</small></p>
-    </li>
-  <% }); %>
-</ul>
+<ul id="comment-index-items" class="list-group"></ul>

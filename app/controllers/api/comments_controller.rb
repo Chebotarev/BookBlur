@@ -1,6 +1,7 @@
 class Api::CommentsController < ApplicationController
   def index
     @comments = Comment.all
+    @comments.includes :owner, :book
   end
 
   def create
