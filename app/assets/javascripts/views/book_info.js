@@ -1,5 +1,5 @@
-BookBlur.Views.Social = Backbone.CompositeView.extend({
-  template: JST['social'],
+BookBlur.Views.BookInfo = Backbone.CompositeView.extend({
+  template: JST['book_info'],
 
   className: "container social-container",
 

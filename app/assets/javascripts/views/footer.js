@@ -66,7 +66,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
-    var view = new BookBlur.Views.Social({
+    var view = new BookBlur.Views.BookInfo({
       router: this.router,
       books: this.books
     });
