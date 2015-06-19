@@ -2,7 +2,7 @@ BookBlur.Views.CommentsIndex = Backbone.CompositeView.extend({
 
   template: JST['comments/index'],
 
-  className: "col-xs-6 col-centered",
+  className: "col-xs-6 col-xs-offset-3",
 
   initialize: function (options) {
     this.listenTo(this.collection, "sync", this.addAllCommentsIndexItems);
@@ -13,7 +13,7 @@ BookBlur.Views.CommentsIndex = Backbone.CompositeView.extend({
     this.eachSubview(function (subview) {
       subview.remove();
     });
-    
+
     this.collection.each(function (comment) {
       this.addCommentIndexItem(comment);
     }.bind(this));

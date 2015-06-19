@@ -1,10 +1,6 @@
-footer#footer-bar {
-  min-height: 50px;
+footer#footer-bar button {
+  background-color: rgb(129, 158, 179);
   position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #F8F8F8;
 }
 
 div#inner-footer {
@@ -21,7 +17,7 @@ button#collapse-social {
 
 div.social-container {
   position: absolute;
-  top: -15.6pc;
+  top: -18.75pc;
   right: 0;
   left: 16.66666666667%;
   height: 500%;
@@ -44,19 +40,13 @@ a#comments-social-tab {
 
 div.tabbed-content {
   overflow: scroll;
-  height: 12pc;
-}
-
-button#toggle-bookmark {
-  position: absolute;
+  height: 14pc;
 }
 
 button#post-comment {
-  position: absolute;
   margin-left: 5pc;
 }
 
 button#toggle-night-mode {
-  position: absolute;
-  margin-left: 12pc;
+  margin-left: 35%;
 }

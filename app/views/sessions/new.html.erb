@@ -1,7 +1,7 @@
 <main class="container sign-in">
   <div class="row">
 
-    <div class="col-xs-4 col-centered">
+    <div class="col-xs-4 col-xs-offset-4">
       <h1 class="text-white">Sign In</h1>
 
       <form action="<%= session_url %>" method="post">
@@ -37,7 +37,7 @@
         <input type="submit" class="btn btn-primary" value="Sign In">
       </form>
 
-      <div class="login-options">  
+      <div class="login-options">
         <br>
         <label class="text-white">New to BookBlur?</label><br>
         <a href="<%= new_user_url %>"><button class="btn btn-success">Create User</button></a>
