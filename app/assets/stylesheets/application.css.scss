@@ -52,6 +52,11 @@ nav#nav {
   margin-bottom: 0;
 }
 
+div#news-feed {
+  height: 85vh;
+  overflow: scroll;
+}
+
 .login-options {
   text-align: center;
 }

@@ -4,7 +4,7 @@ BookBlur.Views.CommentModal = Backbone.View.extend({
   events: {
     "click div.m-backdrop": "removeFade",
     "click button.close": "removeFade",
-    "submit form.comment-form": "handleSubmit"
+    "submit .comment-form": "handleSubmit"
   },
 
   initialize: function () {
@@ -13,6 +13,17 @@ BookBlur.Views.CommentModal = Backbone.View.extend({
 
   handleSubmit: function (event) {
     event.preventDefault();
+    var view = this;
+    var formData = $(event.currentTarget).serializeJSON().comment;
+
+    formData.book_id = parseInt(Backbone.history.fragment.slice(5));
+
+    var comment = new BookBlur.Models.Comment(formData);
+    comment.save({}, {
+      success: function () {
+        view.removeFade();
+      }
+    })
   },
 
   removeFade: function () {

@@ -3,7 +3,7 @@ BookBlur.Views.CommentsIndexItem = Backbone.View.extend({
 
   tagName: "li",
 
-  className: "list-group-item",
+  className: "list-group-item comment-card",
 
   initialize: function (options) {
     this.owner = options.owner;

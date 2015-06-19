@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    @commment = Comment.new(comment_params)
+    @comment = Comment.new(comment_params)
     @comment.owner_id = current_user.id
 
     if @comment.save

@@ -32,3 +32,13 @@ body.night-mode div.social-container {
   background-color: black;
   color: white;
 }
+
+body.night-mode li.comment-card {
+  background-color: grey;
+  color: white;
+}
+
+body.night-mode li.comment-card:hover {
+  background-color: black;
+  color: white;
+}

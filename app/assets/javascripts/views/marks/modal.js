@@ -20,7 +20,7 @@ BookBlur.Views.MarkModal = Backbone.View.extend({
       success: function () {
         view.removeFade();
       }
-    })
+    });
   },
 
   removeFade: function () {
