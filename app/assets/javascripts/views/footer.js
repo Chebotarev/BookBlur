@@ -9,7 +9,8 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
 
   events: {
     "click button#expand-social": "expandSocial",
-    "click button#collapse-social": "collapseSocial"
+    "click button#collapse-social": "collapseSocial",
+    "click button#post-comment": "postComment"
   },
 
   initialize: function (options) {
@@ -28,7 +29,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-down").
       addClass("glyphicon-menu-up");
 
-    this.socialView.$el.hide("slide", { direction: "down" }, 500);
+    this.bookInfo.$el.hide("slide", { direction: "down" }, 500);
   },
 
   expandSocial: function (event) {
@@ -40,12 +41,12 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       removeClass("glyphicon-menu-up").
       addClass("glyphicon-menu-down");
 
-    this.socialView.$el.show("slide", { direction: "down" }, 500);
+    this.bookInfo.$el.show("slide", { direction: "down" }, 500);
   },
 
   handleRoute: function (route, params) {
     if (route !== "show") {
-      if (!this.socialView.$el.hasClass("hidden")) {
+      if (!this.bookInfo.$el.hasClass("hidden")) {
         $("button#collapse-social").click();
       }
       this.$("button.toggle-view").attr("disabled", "disabled");
@@ -56,6 +57,12 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
       this.$("button#toggle-bookmark").removeAttr("disabled");
       this.$("button#post-comment").removeAttr("disabled");
     }
+  },
+
+  postComment: function () {
+    var view = new BookBlur.Views.CommentModal();
+    $("body").append(view.$el);
+    view.render();
   },
 
   render: function () {
@@ -75,6 +82,6 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     view.$el.hide();
     view.render();
 
-    this.socialView = view;
+    this.bookInfo = view;
   }
 });

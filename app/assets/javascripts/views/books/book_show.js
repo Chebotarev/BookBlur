@@ -77,7 +77,7 @@ BookBlur.Views.BookShow = Backbone.View.extend({
       model: mark
     });
 
-    $("div#book-show").append(view.$el);
+    $("body").append(view.$el);
     view.render();
   },
 
