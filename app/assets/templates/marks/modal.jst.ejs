@@ -11,13 +11,14 @@
 
   <form class="mark-form">
     <div class="form-group">
-      <h4>Note</h4>
+      <h4>Bookmark <small> at Location <%= mark.escape('location') %></small></h4>
       <textarea
         id="body-field"
         name="mark[body]"
         class="form-control"
         rows="5"
         cols="30"
+        placeholder="Attach note to bookmark"
       ><%= mark.escape('body') %></textarea>
       <br>
 

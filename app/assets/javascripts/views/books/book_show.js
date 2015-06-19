@@ -8,11 +8,13 @@ BookBlur.Views.BookShow = Backbone.View.extend({
   events: {
     "click #prev-page": "prevPage",
     "click #next-page": "nextPage",
-    "click span.bookmark": "showBookmark"
+    "click span.bookmark": "showBookmark",
+    "click #toggle-bookmark": "toggleMark"
   },
 
   initialize: function (options) {
     this.bookmarking = false;
+    $("#toggle-bookmark").off("click");
     $("#toggle-bookmark").on("click", this.toggleMark.bind(this));
 
     this.listenTo(this.model, "sync", this.render);
@@ -20,16 +22,17 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   addNewBookmark: function (event) {
     var $target = $(event.currentTarget).parent();
+
     var newMark = new BookBlur.Models.Mark({
       book_id: parseInt(Backbone.history.fragment.slice(5)),
       location: $target.data('location')
     });
 
-    this.toggleMark();
 
     newMark.save({}, {
       success: function () {
         this.renderBookmark($target, newMark.id, false);
+        this.toggleMark();
       }.bind(this)
     });
   },
@@ -80,16 +83,19 @@ BookBlur.Views.BookShow = Backbone.View.extend({
 
   toggleMark: function (event) {
     var $toggleBtn = $("#toggle-bookmark");
+    var $cols = $("div.book-col");
 
     if (this.bookmarking) {
       $toggleBtn.removeClass('grey');
       $toggleBtn.blur();
-      $(".book-col").css('cursor','default').off("click");
+      $cols.css('cursor','default');
+      $cols.off("click");
       this.bookmarking = false;
     } else {
       $toggleBtn.addClass('grey');
       $toggleBtn.blur();
-      $(".book-col").css('cursor','pointer').on("click", this.addNewBookmark.bind(this));
+      $cols.css('cursor','pointer')
+      $cols.on("click", this.addNewBookmark.bind(this));
       this.bookmarking = true;
     }
   },
