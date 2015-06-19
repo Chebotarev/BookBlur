@@ -5,7 +5,11 @@ aside#new-form-search {
   min-height: 80vh;
 }
 
-.navbar-search div.search-results {
+div.navbar-search {
+  color: white;
+}
+
+div.navbar-search div.search-results {
   position: absolute;
   z-index: 2;
 }

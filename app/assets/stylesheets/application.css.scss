@@ -66,3 +66,13 @@ nav#nav {
   top: 50%;
   transform: translateY(-50%);
 }
+
+body.night-mode {
+  background-color: black;
+  color: white;
+}
+
+footer#footer-bar.night-mode {
+  background-color: black;
+  color: white;
+}

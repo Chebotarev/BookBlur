@@ -10,7 +10,8 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
   events: {
     "click button#expand-social": "expandSocial",
     "click button#collapse-social": "collapseSocial",
-    "click button#post-comment": "postComment"
+    "click button#post-comment": "postComment",
+    "click button#toggle-night-mode": "toggleNightMode"
   },
 
   initialize: function (options) {
@@ -63,6 +64,11 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     var view = new BookBlur.Views.CommentModal();
     $("body").append(view.$el);
     view.render();
+  },
+
+  toggleNightMode: function () {
+    $('body').toggleClass("night-mode");
+    $('footer').toggleClass("night-mode");
   },
 
   render: function () {
