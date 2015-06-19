@@ -17,12 +17,15 @@ BookBlur.Views.Social = Backbone.CompositeView.extend({
 
     if (route === "show") {
       var book = this.books.getOrFetch(params[0]);
-      var view = new BookBlur.Views.MarksIndex({
+      var marksView = new BookBlur.Views.MarksIndex({
         model: book
       });
-      this.addSubview('div#marks-tab-content', view);
+      this.addSubview('div#marks-tab-content', marksView);
 
-      $('div#comments-tab-content').html("<h4>Comments!</h4>");
+      var commentsView = new BookBlur.Views.CommentsIndex({
+        collection: book.comments()
+      });
+      this.addSubview('div#comments-tab-content', commentsView);
     }
   },
 

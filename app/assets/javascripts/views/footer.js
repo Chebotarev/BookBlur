@@ -72,7 +72,7 @@ BookBlur.Views.FooterView = Backbone.CompositeView.extend({
     });
 
     $("footer#footer-bar").append(view.$el);
-    view.$el.toggle();
+    view.$el.hide();
     view.render();
 
     this.socialView = view;

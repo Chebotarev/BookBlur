@@ -5,14 +5,26 @@ BookBlur.Models.Book = Backbone.Model.extend({
     if (!this._marks) {
       this._marks = new BookBlur.Collections.Marks();
     }
-    return this._marks
+    return this._marks;
+  },
+
+  comments: function () {
+    if (!this._comments) {
+      this._comments = new BookBlur.Collections.Comments();
+    }
+    return this._comments;
   },
 
   parse: function (payload) {
     if (payload.marks) {
-      this.marks().set(payload.marks)
-      delete payload.marks
+      this.marks().set(payload.marks);
+      delete payload.marks;
     }
-    return payload
+
+    if (payload.comments) {
+      this.comments().set(payload.comments);
+      delete payload.comments;
+    }
+    return payload;
   }
 });

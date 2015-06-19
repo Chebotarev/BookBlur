@@ -8,3 +8,19 @@ json.marks do
     end
   end
 end
+
+json.comments do
+  json.array!(@book.comments) do |comment|
+    json.id comment.id
+    json.body comment.body
+    json.created_at time_ago_in_words(comment.created_at)
+
+    json.owner do
+      json.username comment.owner.username
+    end
+
+    json.book do
+      json.title comment.book.title
+    end
+  end
+end

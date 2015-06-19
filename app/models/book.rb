@@ -8,4 +8,6 @@ class Book < ActiveRecord::Base
   has_many :lists
 
   has_many :marks
+
+  has_many :comments
 end
