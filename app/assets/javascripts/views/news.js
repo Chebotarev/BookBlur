@@ -3,6 +3,10 @@ BookBlur.Views.NewsFeed = Backbone.CompositeView.extend({
 
   className: "container",
 
+  attributes: {
+    "id": "news-feed"
+  },
+
   initialize: function (options) {
     this.comments = options.comments;
 
