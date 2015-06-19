@@ -3,11 +3,6 @@ body.night-mode {
   color: white;
 }
 
-body.night-mode li.selected {
-  background-color: black;
-  color: white;
-}
-
 body.night-mode .panel-default > .panel-heading {
   background-color: rgb(94, 91, 91);
   color: white;
@@ -20,6 +15,11 @@ body.night-mode .panel-body {
 
 body.night-mode li.book-card {
   background-color: grey;
+  color: white;
+}
+
+body.night-mode li.book-card.selected {
+  background-color: black;
   color: white;
 }
 
