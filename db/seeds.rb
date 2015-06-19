@@ -5,15 +5,15 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  username: "notCheb",
+  username: "Not Guest",
   email: "other@example.com",
   password: "password"
 )
 
 book1 = Book.create!(
-  title: "A Christmas Carol",
-  author: "Charles Dickens",
-  url: "https://res.cloudinary.com/bookblur/raw/upload/A_Christmas_Carol_rprf1h.html"
+  title: "The War of the Worlds",
+  author: "H.G. Wells",
+  url: "https://res.cloudinary.com/bookblur/raw/upload/The_War_of_the_Worlds_ra2pic.html"
 )
 
 book2 = Book.create!(
@@ -48,7 +48,7 @@ list3 = List.create!(
 list4 = List.create!(
   title: "Not My List",
   owner_id: user2.id,
-  description: "This list does not belong to Alex"
+  description: "This list does not belong to Guest"
 )
 
 listing1 = Listing.create!(
@@ -95,7 +95,7 @@ mark4 = Mark.create!(
 comment1 = Comment.create!(
   owner_id: user1.id,
   book_id: book1.id,
-  body: "A Christmas Carol is a great book!"
+  body: "The War of the Worlds is a great book!"
 )
 
 
